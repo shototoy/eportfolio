@@ -51,7 +51,7 @@
  .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
  /* ========== HERO ========== */
- .hero { min-height: 100vh; display: flex; align-items: center; padding: 140px 0 100px; }
+ .hero { display: flex; align-items: center; padding: 140px 0 100px; }
  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
  .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
  .hero-text .greeting { font-size: 0.9rem; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
@@ -71,7 +71,7 @@
  .hero-image-wrapper img { width: 380px; height: 480px; object-fit: cover; border-radius: 8px; }
 
  /* ========== SECTIONS ========== */
- section { padding: 6rem 0; }
+
  .section-header { text-align: center; margin-bottom: 4rem; }
  .section-label { font-size: 0.85rem; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 500; color: var(--text); }
@@ -239,3 +239,21 @@
  nav a:hover::before, nav a.active::before {
  width: 100%;
  }
+
+/* RovoDev 100vh section layout overrides (revised) */
+/* Ensure hero content starts at the very top (no vertical centering) */
+.hero { display: block !important; align-items: flex-start !important; }
+/* Optional: enable scroll snapping to avoid perceived gaps during scroll */
+:root{--nav-height:70px;--footer-height:60px}
+html, body { height: 100%; }
+body { margin: 0; }
+/* Remove vertical padding that causes visible gaps */
+section { scroll-margin-top: var(--nav-height); }
+/* Each section exactly one viewport tall by default */
+main > section { height: 100vh; margin: 0; display: flow-root; overflow: hidden; }
+/* Offset content under fixed navbar for all non-hero, non-last sections without increasing section height */
+/* Hero section considers navbar height */
+.hero { min-height: 100vh; box-sizing: border-box; }
+/* Last section considers footer height */
+main > section:last-of-type { height: calc(100svh - var(--footer-height)); }
+main > section:last-of-type .container { padding-bottom: var(--footer-height); }

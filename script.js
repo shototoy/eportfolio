@@ -1,6 +1,34 @@
 const yearEl = document.getElementById('currentYear');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Dynamically expose navbar and footer heights for layout calculations
+(function setLayoutVars() {
+  function applyHeights() {
+    const nav = document.getElementById('navbar');
+    const footer = document.querySelector('footer');
+    const navRect = nav ? nav.getBoundingClientRect() : null;
+    const footerRect = footer ? footer.getBoundingClientRect() : null;
+
+    // Use fractional pixel precision for accurate layout
+    const navH = navRect ? navRect.height : 70;
+    const footerH = footerRect ? footerRect.height : 60;
+
+    document.documentElement.style.setProperty('--nav-height', navH + 'px');
+    document.documentElement.style.setProperty('--footer-height', footerH + 'px');
+  }
+  // Initial apply when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyHeights);
+  } else {
+    applyHeights();
+  }
+  // Re-apply on resize and after fonts load (heights may change)
+  window.addEventListener('resize', applyHeights, { passive: true });
+  (document.fonts && document.fonts.ready?.then) && document.fonts.ready.then(applyHeights);
+  // Fallback reflow after a tick
+  setTimeout(applyHeights, 300);
+})();
+
 (function() {
   const menuToggle = document.getElementById('menuToggle') || document.querySelector('.menu-toggle');
   const navMenu = document.getElementById('navMenu') || document.getElementById('navLinks') || document.querySelector('nav ul') || document.querySelector('.nav-links');
