@@ -29,7 +29,7 @@
             <div class="content-right">
                 <div class="text-portrait-container">
                     <div class="text-portrait" style="background-image: url('profile.png');">
-<?php for($i = 0; $i < 500; $i++) { echo "DAANOY "; } ?>
+<?php for($i = 0; $i < 500; $i++) { echo "MY NAME IS JELAND DAANOY AND IM JUST A GUY THAT ENJOYS THE SMALL THIGNS! "; } ?>
                     </div>
                 </div>
             </div>
