@@ -16,7 +16,6 @@
       aria-valuenow="0"
       style="width: 0%"
     ></div>
-
     <header>
       <nav
         data-element="nav"
