@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const navItems = document.querySelectorAll('.nav-item');
-  const navCenter = document.querySelector('.nav-center');
+  const navItems = document.querySelectorAll('.dock-item');
   const clipOverlay = document.getElementById('clipOverlay');
   const mainSection = document.getElementById('mainSection');
   const sectionContent = document.getElementById('sectionContent');
@@ -13,33 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
     reflection: document.getElementById('reflectionTemplate').innerHTML
   };
 
-  const gradients = {
-    home: 'var(--gradient-1)',
-    about: 'var(--gradient-2)',
-    skills: 'var(--gradient-3)',
-    projects: 'var(--gradient-4)',
-    reflection: 'var(--gradient-5)'
-  };
-
   let currentSection = 'home';
   let isTransitioning = false;
-
-  function updateCenterButton(isHome) {
-    if (isHome) {
-      navCenter.style.transform = 'scale(1.05)';
-      navCenter.querySelector('.profile-circle').style.boxShadow = '0 0 40px rgba(255, 107, 157, 0.8)';
-    } else {
-      navCenter.style.transform = 'scale(1)';
-      navCenter.querySelector('.profile-circle').style.boxShadow = '0 0 30px rgba(255, 107, 157, 0.5)';
-    }
-  }
 
   function loadSection(sectionName) {
     if (isTransitioning || sectionName === currentSection) return;
     isTransitioning = true;
 
-    updateCenterButton(sectionName === 'home');
-
+    // Update Dock Active State
     navItems.forEach(item => {
       if (item.dataset.section === sectionName) {
         item.classList.add('active');
@@ -53,32 +33,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Raise overlay above clip-path during transition
     mainSection.classList.add('transitioning');
 
+    // Start expanding clip path (Gold Circle)
     clipOverlay.classList.add('expanding');
     clipOverlay.classList.remove('shrinking');
 
+    // Wait for cover
     setTimeout(() => {
+      // Switch Content
       mainSection.className = 'main-section ' + sectionName + ' transitioning';
       sectionContent.innerHTML = templates[sectionName];
       currentSection = sectionName;
     }, 600);
 
+    // Start shrinking clip path
     setTimeout(() => {
       clipOverlay.classList.remove('expanding');
       clipOverlay.classList.add('shrinking');
     }, 800);
 
+    // Show Content
     setTimeout(() => {
       sectionContent.classList.remove('hidden');
     }, 900);
 
+    // Cleanup
     setTimeout(() => {
       clipOverlay.classList.remove('shrinking');
-      // Lower overlay back below content after transition
       mainSection.classList.remove('transitioning');
       isTransitioning = false;
     }, 1600);
   }
 
+  // Event Listeners
   navItems.forEach(item => {
     item.addEventListener('click', () => {
       const section = item.dataset.section;
@@ -86,59 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  navCenter.addEventListener('click', () => {
-    loadSection('home');
-  });
-
-  // Auto-carousel functionality
-  function initCarousels() {
-    const carousels = document.querySelectorAll('.carousel-images');
-
-    carousels.forEach(carousel => {
-      const images = carousel.querySelectorAll('img');
-      if (images.length <= 1) return;
-
-      let currentIndex = 0;
-
-      setInterval(() => {
-        const prevIndex = currentIndex;
-        currentIndex = (currentIndex + 1) % images.length;
-
-        // Mark current as exiting
-        images[prevIndex].classList.add('exiting');
-        images[prevIndex].classList.remove('active');
-
-        // Mark next as active
-        images[currentIndex].classList.add('active');
-
-        // Clean up exiting class after transition
-        setTimeout(() => {
-          images[prevIndex].classList.remove('exiting');
-        }, 650);
-      }, 3000);
-    });
-  }
-
-  // Initialize home section on page load
-  mainSection.className = 'main-section home';
+  // Initialize Home
   sectionContent.innerHTML = templates.home;
-  updateCenterButton(true);
-
-  // Initialize carousels when projects section is loaded
-  const originalLoadSection = loadSection;
-  function loadSectionWithCarousel(sectionName) {
-    originalLoadSection(sectionName);
-    if (sectionName === 'projects') {
-      setTimeout(initCarousels, 1000);
-    }
-  }
-
-  // Override loadSection calls
-  navItems.forEach(item => {
-    item.removeEventListener('click', () => { });
-    item.addEventListener('click', () => {
-      const section = item.dataset.section;
-      loadSectionWithCarousel(section);
-    });
-  });
+  mainSection.className = 'main-section home';
 });
