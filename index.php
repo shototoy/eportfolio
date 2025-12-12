@@ -89,17 +89,21 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10v6M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                         <h3>Background</h3>
                     </div>
-                    <div class="card-right">
-                        <p><strong>Educational background:</strong></p>
-                        <ul>
-                            <li>Surallah Central Elementary School (2016-2017)</li>
-                            <li>Libertad National Highschool (2020-2023)</li>
-                        </ul>
-                        <p><strong>Courses or trainings taken:</strong></p>
-                        <ul>
-                            <li>Sultan Kudarat State University</li>
-                            <li>Bachelor of Science in Computer Engineering</li>
-                        </ul>
+                    <div class="card-right card-right-columns">
+                        <div class="column">
+                            <p><strong>Educational background:</strong></p>
+                            <ul>
+                                <li>Surallah Central Elementary School (2016-2017)</li>
+                                <li>Libertad National Highschool (2020-2023)</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <p><strong>Courses or trainings taken:</strong></p>
+                            <ul>
+                                <li>Sultan Kudarat State University</li>
+                                <li>Bachelor of Science in Computer Engineering</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="info-card">
@@ -107,18 +111,22 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
                         <h3>Competencies</h3>
                     </div>
-                    <div class="card-right">
-                        <ul>
-                            <li>Creativity</li>
-                            <li>Willingness to work well with others</li>
-                            <li>Ability to follow instructions</li>
-                            <li>Adaptability</li>
-                        </ul>
-                        <p><strong>Strength and Unique traits:</strong></p>
-                        <ul>
-                            <li>Hardworking, Dedicated, Responsible, Reliable</li>
-                            <li>Willing to help others, Friendly and approachable</li>
-                        </ul>
+                    <div class="card-right card-right-columns">
+                        <div class="column">
+                            <ul>
+                                <li>Creativity</li>
+                                <li>Willingness to work well with others</li>
+                                <li>Ability to follow instructions</li>
+                                <li>Adaptability</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <p><strong>Strength and Unique traits:</strong></p>
+                            <ul>
+                                <li>Hardworking, Dedicated, Responsible, Reliable</li>
+                                <li>Willing to help others, Friendly and approachable</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="info-card">
@@ -126,14 +134,18 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
                         <h3>Interests & Goals</h3>
                     </div>
-                    <div class="card-right">
-                        <p><strong>Hobbies:</strong></p>
-                        <ul>
-                            <li>Watching movies/anime</li>
-                            <li>Playing Pickleball</li>
-                        </ul>
-                        <p><strong>Career goals:</strong></p>
-                        <p>To develop strong knowledge and skills that will help me in my future profession.</p>
+                    <div class="card-right card-right-columns">
+                        <div class="column">
+                            <p><strong>Hobbies:</strong></p>
+                            <ul>
+                                <li>Watching movies/anime</li>
+                                <li>Playing Pickleball</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <p><strong>Career goals:</strong></p>
+                            <p>To develop strong knowledge and skills that will help me in my future profession.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -143,19 +155,34 @@
     <script id="skillsTemplate" type="text/template">
         <div class="tiled-grid">
             <div class="info-card">
-                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Web Development</h3>
-                <p>HTML & CSS</p>
-                <p>Building responsive and structured web pages.</p>
+                <div class="card-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    <h3>Web Development</h3>
+                </div>
+                <div class="card-right">
+                    <p>HTML & CSS</p>
+                    <p>Building responsive and structured web pages.</p>
+                </div>
             </div>
             <div class="info-card">
-                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> Attitude</h3>
-                <p>Positive attitude and motivation to learn.</p>
-                <p>Always ready to take on new challenges.</p>
+                <div class="card-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                    <h3>Attitude</h3>
+                </div>
+                <div class="card-right">
+                    <p>Positive attitude and motivation to learn.</p>
+                    <p>Always ready to take on new challenges.</p>
+                </div>
             </div>
             <div class="info-card">
-                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Soft Skills</h3>
-                <p>Time management and organization.</p>
-                <p>Adaptability and flexibility in any situation.</p>
+                <div class="card-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <h3>Soft Skills</h3>
+                </div>
+                <div class="card-right">
+                    <p>Time management and organization.</p>
+                    <p>Adaptability and flexibility in any situation.</p>
+                </div>
             </div>
         </div>
     </script>
@@ -169,16 +196,31 @@
     <script id="reflectionTemplate" type="text/template">
         <div class="tiled-grid">
             <div class="info-card">
-                <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">01.</span>Learnings</h3>
-                <p>This course helped me gain both knowledge and practical skills in technology and problem-solving. I learned how to work on projects, think critically, and collaborate effectively with others. It also taught me the value of continuous learning and adapting to new challenges.</p>
+                <div class="card-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2v12l4 2"></path></svg>
+                    <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">01.</span>Learnings</h3>
+                </div>
+                <div class="card-right">
+                    <p>This course helped me gain both knowledge and practical skills in technology and problem-solving. I learned how to work on projects, think critically, and collaborate effectively with others. It also taught me the value of continuous learning and adapting to new challenges.</p>
+                </div>
             </div>
             <div class="info-card">
-                <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">02.</span>Challenges</h3>
-                <p>The challenges I faced, such as understanding new concepts, learning different tools, and managing my time for projects and assignments. Working with others and applying what I learned was sometimes difficult. Still, these challenges helped me grow, stay motivated, and improve my skills.</p>
+                <div class="card-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">02.</span>Challenges</h3>
+                </div>
+                <div class="card-right">
+                    <p>The challenges I faced, such as understanding new concepts, learning different tools, and managing my time for projects and assignments. Working with others and applying what I learned was sometimes difficult. Still, these challenges helped me grow, stay motivated, and improve my skills.</p>
+                </div>
             </div>
             <div class="info-card">
-                <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">03.</span>Future</h3>
-                <p>Learning a scripting language can help me in my future work by allowing me to automate tasks and solve problems more efficiently. It also improves my technical skills and makes me more prepared for careers in programming, data analysis, web development, and other technology-related fields.</p>
+                <div class="card-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">03.</span>Future</h3>
+                </div>
+                <div class="card-right">
+                    <p>Learning a scripting language can help me in my future work by allowing me to automate tasks and solve problems more efficiently. It also improves my technical skills and makes me more prepared for careers in programming, data analysis, web development, and other technology-related fields.</p>
+                </div>
             </div>
         </div>
     </script>

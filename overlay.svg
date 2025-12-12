@@ -1,51 +1,229 @@
 <svg width="100%" height="100%" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
   <defs>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    
+    <filter id="shimmer">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 2 0"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd60a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#cca000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffd60a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#240046;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#10002b;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#240046;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <radialGradient id="diamondShine">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#ffd60a;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#cca000;stop-opacity:0.3" />
+    </radialGradient>
   </defs>
 
-  <!-- Upper Left: Digital Royal Crown / Circuitry -->
+  <!-- Upper Left: Royal Crown and Ornate Patterns -->
   <g transform="translate(0,0)" filter="url(#glow)">
-    <!-- Main Angular Rays -->
-    <path d="M 0,0 L 200,100 L 400,50 L 600,150 L 300,200 L 100,250 Z" fill="none" stroke="#ffd60a" stroke-width="2" opacity="0.6"/>
-    <path d="M 0,100 L 150,150 L 250,300 L 50,400" fill="none" stroke="#ffd60a" stroke-width="2" opacity="0.5"/>
-    <path d="M 100,0 L 250,50 L 450,100 L 550,250" fill="none" stroke="#ffd60a" stroke-width="2" opacity="0.5"/>
+    <!-- Elaborate Crown -->
+    <path d="M 80,60 L 100,20 L 120,60 L 140,10 L 160,60 L 180,15 L 200,60 L 220,20 L 240,60 L 240,90 L 80,90 Z" 
+          fill="url(#goldGradient)" stroke="#ffd60a" stroke-width="2.5" opacity="0.8"/>
+    <circle cx="100" cy="20" r="6" fill="#ffd60a" opacity="1"/>
+    <circle cx="140" cy="10" r="7" fill="#ffd60a" opacity="1"/>
+    <circle cx="180" cy="15" r="6" fill="#ffd60a" opacity="1"/>
+    <circle cx="220" cy="20" r="6" fill="#ffd60a" opacity="1"/>
+    
+    <!-- Crown Jewels -->
+    <circle cx="140" cy="10" r="3" fill="#ffffff" opacity="0.9"/>
+    <circle cx="180" cy="15" r="2.5" fill="#ffffff" opacity="0.9"/>
+    
+    <!-- Ornate Flourishes -->
+    <path d="M 0,0 Q 100,50 200,100 T 400,50 T 600,150 T 700,80" 
+          fill="none" stroke="#ffd60a" stroke-width="2.5" opacity="0.7"/>
+    <path d="M 0,100 Q 75,125 150,150 T 250,300 T 350,250" 
+          fill="none" stroke="url(#goldGradient)" stroke-width="3" opacity="0.8"/>
+    <path d="M 100,0 Q 200,25 250,50 T 450,100 T 550,250 T 650,200" 
+          fill="none" stroke="#ffd60a" stroke-width="2.5" opacity="0.6"/>
+    
+    <!-- Purple Royal Vines -->
+    <path d="M 50,120 Q 100,140 150,180 T 200,220 T 280,260" 
+          fill="none" stroke="#240046" stroke-width="4" opacity="0.7"/>
+    <path d="M 300,80 Q 350,100 400,120 T 500,100 T 580,140" 
+          fill="none" stroke="#10002b" stroke-width="4" opacity="0.7"/>
+    
+    <!-- Decorative Swirls -->
+    <path d="M 120,140 Q 140,160 160,140 Q 180,120 200,140" 
+          fill="none" stroke="#cca000" stroke-width="2" opacity="0.6"/>
+    <path d="M 350,180 Q 370,200 390,180 Q 410,160 430,180" 
+          fill="none" stroke="#cca000" stroke-width="2" opacity="0.6"/>
     
     <!-- Geometric Accents -->
-    <path d="M 200,100 L 220,120 M 400,50 L 420,70 M 300,200 L 320,220" stroke="#cca000" stroke-width="3" opacity="0.8"/>
-    <circle cx="200" cy="100" r="4" fill="#ffd60a" opacity="0.8"/>
-    <circle cx="400" cy="50" r="4" fill="#ffd60a" opacity="0.8"/>
-    <circle cx="600" cy="150" r="4" fill="#ffd60a" opacity="0.8"/>
+    <circle cx="200" cy="100" r="6" fill="#ffd60a" opacity="0.9"/>
+    <circle cx="400" cy="50" r="6" fill="#ffd60a" opacity="0.9"/>
+    <circle cx="600" cy="150" r="6" fill="#ffd60a" opacity="0.9"/>
     
-    <!-- Abstract Tech Lines -->
-    <path d="M 50,50 L 100,50 L 120,80 L 200,80" fill="none" stroke="#ffd60a" stroke-width="1" opacity="0.4"/>
-    <path d="M 20,150 L 50,180 L 100,180" fill="none" stroke="#ffd60a" stroke-width="1" opacity="0.4"/>
+    <!-- Glimmering Diamonds with Shine -->
+    <g filter="url(#shimmer)">
+      <path d="M 150,200 L 165,215 L 150,230 L 135,215 Z" fill="url(#diamondShine)" opacity="0.9"/>
+      <path d="M 155,215 L 150,220 L 145,215 L 150,210 Z" fill="#ffffff" opacity="0.7"/>
+    </g>
+    
+    <g filter="url(#shimmer)">
+      <path d="M 350,120 L 370,140 L 350,160 L 330,140 Z" fill="url(#diamondShine)" opacity="0.9"/>
+      <path d="M 355,140 L 350,145 L 345,140 L 350,135 Z" fill="#ffffff" opacity="0.7"/>
+    </g>
+    
+    <g filter="url(#shimmer)">
+      <path d="M 480,80 L 495,95 L 480,110 L 465,95 Z" fill="url(#diamondShine)" opacity="0.9"/>
+      <path d="M 485,95 L 480,100 L 475,95 L 480,90 Z" fill="#ffffff" opacity="0.7"/>
+    </g>
+    
+    <!-- Small Sparkles -->
+    <circle cx="165" cy="215" r="1.5" fill="#ffffff" opacity="0.9"/>
+    <circle cx="370" cy="140" r="1.5" fill="#ffffff" opacity="0.9"/>
+    <circle cx="495" cy="95" r="1.5" fill="#ffffff" opacity="0.9"/>
   </g>
 
-  <!-- Lower Right: Ascending Geometric Structure -->
+  <!-- Lower Right: Ascending Royal Structure -->
   <g transform="translate(1920, 1080) rotate(180)" filter="url(#glow)">
+    <!-- Elaborate Crown Mirror -->
+    <path d="M 80,60 L 100,20 L 120,60 L 140,10 L 160,60 L 180,15 L 200,60 L 220,20 L 240,60 L 240,90 L 80,90 Z" 
+          fill="url(#goldGradient)" stroke="#ffd60a" stroke-width="2.5" opacity="0.8"/>
+    <circle cx="100" cy="20" r="6" fill="#ffd60a" opacity="1"/>
+    <circle cx="140" cy="10" r="7" fill="#ffd60a" opacity="1"/>
+    <circle cx="180" cy="15" r="6" fill="#ffd60a" opacity="1"/>
+    <circle cx="220" cy="20" r="6" fill="#ffd60a" opacity="1"/>
+    
+    <!-- Crown Jewels -->
+    <circle cx="140" cy="10" r="3" fill="#ffffff" opacity="0.9"/>
+    <circle cx="180" cy="15" r="2.5" fill="#ffffff" opacity="0.9"/>
+    
     <!-- Main Structure -->
-    <path d="M 0,0 L 100,100 L 300,50 L 500,150 L 200,250 L 50,300 Z" fill="none" stroke="#ffd60a" stroke-width="2" opacity="0.6"/>
-    <path d="M 0,50 L 100,80 L 200,200 L 50,350" fill="none" stroke="#ffd60a" stroke-width="2" opacity="0.5"/>
+    <path d="M 0,0 Q 50,50 100,100 T 300,50 T 500,150 T 600,100" 
+          fill="none" stroke="#ffd60a" stroke-width="2.5" opacity="0.7"/>
+    <path d="M 0,50 Q 50,65 100,80 T 200,200 T 300,180 T 50,350" 
+          fill="none" stroke="url(#goldGradient)" stroke-width="3" opacity="0.8"/>
+    
+    <!-- Purple Royal Vines -->
+    <path d="M 100,150 Q 150,170 200,200 T 300,180 T 380,220" 
+          fill="none" stroke="#240046" stroke-width="4" opacity="0.7"/>
+    <path d="M 250,80 Q 300,100 350,120 T 450,100" 
+          fill="none" stroke="#10002b" stroke-width="4" opacity="0.7"/>
+    
+    <!-- Decorative Swirls -->
+    <path d="M 180,160 Q 200,180 220,160 Q 240,140 260,160" 
+          fill="none" stroke="#cca000" stroke-width="2" opacity="0.6"/>
     
     <!-- Accents -->
-    <circle cx="100" cy="100" r="4" fill="#cca000" opacity="0.8"/>
-    <circle cx="300" cy="50" r="4" fill="#cca000" opacity="0.8"/>
-    <circle cx="500" cy="150" r="4" fill="#cca000" opacity="0.8"/>
+    <circle cx="100" cy="100" r="6" fill="#cca000" opacity="0.9"/>
+    <circle cx="300" cy="50" r="6" fill="#cca000" opacity="0.9"/>
+    <circle cx="500" cy="150" r="6" fill="#cca000" opacity="0.9"/>
     
-    <!-- Hexagonal hints -->
-    <path d="M 100,100 L 120,130 L 150,130 L 170,100" fill="none" stroke="#ffd60a" stroke-width="1" opacity="0.4"/>
+    <!-- Glimmering Diamonds -->
+    <g filter="url(#shimmer)">
+      <path d="M 150,180 L 170,200 L 150,220 L 130,200 Z" fill="url(#diamondShine)" opacity="0.9"/>
+      <path d="M 155,200 L 150,205 L 145,200 L 150,195 Z" fill="#ffffff" opacity="0.7"/>
+    </g>
+    
+    <g filter="url(#shimmer)">
+      <path d="M 250,100 L 270,120 L 250,140 L 230,120 Z" fill="url(#diamondShine)" opacity="0.9"/>
+      <path d="M 255,120 L 250,125 L 245,120 L 250,115 Z" fill="#ffffff" opacity="0.7"/>
+    </g>
+    
+    <g filter="url(#shimmer)">
+      <path d="M 420,180 L 435,195 L 420,210 L 405,195 Z" fill="url(#diamondShine)" opacity="0.9"/>
+      <path d="M 425,195 L 420,200 L 415,195 L 420,190 Z" fill="#ffffff" opacity="0.7"/>
+    </g>
+    
+    <!-- Small Sparkles -->
+    <circle cx="170" cy="200" r="1.5" fill="#ffffff" opacity="0.9"/>
+    <circle cx="270" cy="120" r="1.5" fill="#ffffff" opacity="0.9"/>
+    <circle cx="435" cy="195" r="1.5" fill="#ffffff" opacity="0.9"/>
+    
+    <!-- Hexagonal Royal Patterns -->
+    <path d="M 100,100 L 120,130 L 150,130 L 170,100 L 150,70 L 120,70 Z" 
+          fill="none" stroke="#ffd60a" stroke-width="2" opacity="0.6"/>
   </g>
   
-  <!-- Floating Particles/Stars -->
-  <circle cx="250" cy="150" r="1.5" fill="#ffd60a" opacity="0.6"/>
-  <circle cx="150" cy="250" r="1.5" fill="#ffd60a" opacity="0.6"/>
-  <circle cx="350" cy="80" r="1" fill="#ffd60a" opacity="0.5"/>
-  <circle cx="1700" cy="900" r="1.5" fill="#ffd60a" opacity="0.6"/>
-  <circle cx="1800" cy="950" r="1.5" fill="#ffd60a" opacity="0.6"/>
+  <!-- Additional Scattered Diamonds Around Edges -->
+  <g filter="url(#shimmer)">
+    <path d="M 200,400 L 215,415 L 200,430 L 185,415 Z" fill="url(#diamondShine)" opacity="0.8"/>
+    <circle cx="215" cy="415" r="1.5" fill="#ffffff" opacity="0.9"/>
+  </g>
+  
+  <g filter="url(#shimmer)">
+    <path d="M 1720,680 L 1735,695 L 1720,710 L 1705,695 Z" fill="url(#diamondShine)" opacity="0.8"/>
+    <circle cx="1735" cy="695" r="1.5" fill="#ffffff" opacity="0.9"/>
+  </g>
+  
+  <g filter="url(#shimmer)">
+    <path d="M 700,200 L 712,212 L 700,224 L 688,212 Z" fill="url(#diamondShine)" opacity="0.7"/>
+    <circle cx="712" cy="212" r="1" fill="#ffffff" opacity="0.8"/>
+  </g>
+  
+  <g filter="url(#shimmer)">
+    <path d="M 1220,880 L 1232,892 L 1220,904 L 1208,892 Z" fill="url(#diamondShine)" opacity="0.7"/>
+    <circle cx="1232" cy="892" r="1" fill="#ffffff" opacity="0.8"/>
+  </g>
+  
+  <!-- Floating Particles/Stars with Purple and Gold -->
+  <circle cx="250" cy="150" r="2.5" fill="#ffd60a" opacity="0.8"/>
+  <circle cx="150" cy="250" r="2.5" fill="#ffd60a" opacity="0.8"/>
+  <circle cx="350" cy="80" r="2" fill="#ffd60a" opacity="0.7"/>
+  <circle cx="450" cy="300" r="2.5" fill="#240046" opacity="0.7"/>
+  <circle cx="550" cy="200" r="2" fill="#240046" opacity="0.6"/>
+  <circle cx="320" cy="420" r="2" fill="#ffd60a" opacity="0.7"/>
+  
+  <circle cx="1700" cy="900" r="2.5" fill="#ffd60a" opacity="0.8"/>
+  <circle cx="1800" cy="950" r="2.5" fill="#ffd60a" opacity="0.8"/>
+  <circle cx="1600" cy="850" r="2" fill="#ffd60a" opacity="0.7"/>
+  <circle cx="1500" cy="780" r="2.5" fill="#240046" opacity="0.7"/>
+  <circle cx="1650" cy="920" r="2" fill="#240046" opacity="0.6"/>
+  <circle cx="1580" cy="680" r="2" fill="#ffd60a" opacity="0.7"/>
+  
+  <!-- Additional Scattered Royal Elements -->
+  <circle cx="800" cy="200" r="2" fill="#ffd60a" opacity="0.6"/>
+  <circle cx="1200" cy="300" r="2.5" fill="#240046" opacity="0.6"/>
+  <circle cx="600" cy="600" r="2" fill="#ffd60a" opacity="0.6"/>
+  <circle cx="1400" cy="500" r="2.5" fill="#240046" opacity="0.6"/>
+  <circle cx="300" cy="800" r="2" fill="#ffd60a" opacity="0.5"/>
+  <circle cx="1600" cy="280" r="2.5" fill="#240046" opacity="0.5"/>
+  
+  <!-- White Sparkle Accents -->
+  <circle cx="280" cy="180" r="1" fill="#ffffff" opacity="0.8"/>
+  <circle cx="520" cy="340" r="1" fill="#ffffff" opacity="0.8"/>
+  <circle cx="1640" cy="900" r="1" fill="#ffffff" opacity="0.8"/>
+  <circle cx="1360" cy="720" r="1" fill="#ffffff" opacity="0.8"/>
+  <!-- Lower Left: Royal Ornamental Corner -->
+  <g transform="translate(0, 1080)" filter="url(#glow)">
+    <path d="M 0,0 Q 50,-50 100,-100 T 200,-50 T 300,-150 T 400,-100" fill="none" stroke="#ffd60a" stroke-width="2.5" opacity="0.7"/>
+    <path d="M 0,-50 Q 75,-75 150,-100 T 250,-200 T 350,-180" fill="none" stroke="url(#goldGradient)" stroke-width="3" opacity="0.8"/>
+    <path d="M 50,0 Q 100,-25 150,-50 T 300,-100 T 450,-150" fill="none" stroke="#ffd60a" stroke-width="2.5" opacity="0.6"/>
+    <path d="M 20,-80 Q 80,-100 140,-140 T 220,-180 T 300,-220" fill="none" stroke="#240046" stroke-width="4" opacity="0.7"/>
+    <path d="M 100,-20 Q 150,-40 200,-80 T 320,-120" fill="none" stroke="#10002b" stroke-width="4" opacity="0.7"/>
+    <g filter="url(#shimmer)"><path d="M 120,-140 L 140,-160 L 120,-180 L 100,-160 Z" fill="url(#diamondShine)" opacity="0.9"/><circle cx="140" cy="-160" r="1.5" fill="#ffffff" opacity="0.9"/></g>
+    <g filter="url(#shimmer)"><path d="M 250,-100 L 270,-120 L 250,-140 L 230,-120 Z" fill="url(#diamondShine)" opacity="0.9"/><circle cx="270" cy="-120" r="1.5" fill="#ffffff" opacity="0.9"/></g>
+    <g filter="url(#shimmer)"><path d="M 180,-200 L 195,-215 L 180,-230 L 165,-215 Z" fill="url(#diamondShine)" opacity="0.9"/><circle cx="195" cy="-215" r="1.5" fill="#ffffff" opacity="0.9"/></g>
+    <circle cx="150" cy="-100" r="6" fill="#ffd60a" opacity="0.9"/>
+    <circle cx="280" cy="-180" r="6" fill="#ffd60a" opacity="0.9"/>
+    <circle cx="100" cy="-60" r="2.5" fill="#ffd60a" opacity="0.8"/>
+    <circle cx="200" cy="-120" r="2.5" fill="#240046" opacity="0.7"/>
+    <circle cx="130" cy="-90" r="1" fill="#ffffff" opacity="0.8"/>
+  </g>
+
 </svg>
+
+
