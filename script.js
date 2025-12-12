@@ -26,11 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     currentSection = sectionName;
   }
-
-  // Initialize with home content
   contentLeft.innerHTML = templates.home;
-
-  // Add event listeners for nav words in text portrait
   document.addEventListener('click', (e) => {
     if (e.target.classList.contains('nav-word')) {
       const section = e.target.dataset.section;

@@ -23,7 +23,7 @@ $navWords = [
     ['word' => 'SKILLS', 'section' => 'skills'],
     ['word' => 'REFLECTION', 'section' => 'reflection']
 ];
-$positions = [23, 63, 88, 131];
+$positions = [23, 63, 78, 105];
 $navIndex = 0;
 
 for($i = 0; $i < 150; $i++) {
