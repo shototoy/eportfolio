@@ -491,6 +491,7 @@ body {
 
 .carousel-images img:not(.active):not(.exiting) {
 	left: 100%;
+	transition: none;
 }
 
 .activity-content {
