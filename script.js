@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navItems = document.querySelectorAll('.nav-item');
-  const mainSection = document.getElementById('mainSection');
-  const sectionContent = document.getElementById('sectionContent');
+  const contentLeft = document.getElementById('contentLeft');
 
   const templates = {
     home: document.getElementById('homeTemplate').innerHTML,
     about: document.getElementById('aboutTemplate').innerHTML,
     skills: document.getElementById('skillsTemplate').innerHTML,
-    projects: document.getElementById('projectsTemplate').innerHTML,
     reflection: document.getElementById('reflectionTemplate').innerHTML
   };
 
@@ -24,8 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    mainSection.className = 'main-section ' + sectionName;
-    sectionContent.innerHTML = templates[sectionName];
+    contentLeft.classList.add('animating');
+
+    setTimeout(() => {
+      contentLeft.innerHTML = templates[sectionName];
+      contentLeft.scrollTop = 0;
+    }, 100);
+
+    setTimeout(() => {
+      contentLeft.classList.remove('animating');
+    }, 700);
+
     currentSection = sectionName;
   }
 
@@ -36,6 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  sectionContent.innerHTML = templates.home;
-  mainSection.className = 'main-section home';
+  contentLeft.innerHTML = templates.home;
 });
+
