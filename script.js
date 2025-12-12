@@ -1,159 +1,129 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const sidebar = document.getElementById('sidebar');
-  const sidebarToggle = document.getElementById('sidebarToggle');
-  const closeSidebar = document.getElementById('closeSidebar');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navItems = document.querySelectorAll('.nav-item');
+  const navCenter = document.querySelector('.nav-center');
+  const clipOverlay = document.getElementById('clipOverlay');
+  const mainSection = document.getElementById('mainSection');
+  const sectionContent = document.getElementById('sectionContent');
 
-  function toggleSidebar() {
-    sidebar.classList.toggle('show');
-  }
-
-  sidebarToggle.addEventListener('click', toggleSidebar);
-  closeSidebar.addEventListener('click', toggleSidebar);
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-
-      if (targetSection) {
-        const allSections = document.querySelectorAll('section');
-        const allContainers = document.querySelectorAll('section .container');
-
-        allSections.forEach(section => {
-          section.style.transition = 'filter 0.25s ease-out';
-          section.style.filter = 'blur(10px)';
-        });
-
-        allContainers.forEach(container => {
-          container.style.transition = 'filter 0.25s ease-out, transform 0.8s ease-out';
-          container.style.filter = 'blur(10px)';
-          container.style.transform = 'translateY(0)';
-        });
-
-        setTimeout(() => {
-          targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }, 100);
-
-        setTimeout(() => {
-          allSections.forEach(section => {
-            section.style.filter = 'blur(0px)';
-          });
-
-          allContainers.forEach(container => {
-            container.style.filter = 'blur(0px)';
-            container.style.transform = 'translateY(0)';
-          });
-        }, 400);
-
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-
-        if (window.innerWidth <= 768) {
-          setTimeout(() => {
-            sidebar.classList.remove('show');
-          }, 100);
-        }
-      }
-    });
-  });
-
-  const sections = document.querySelectorAll('section');
-  const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -20% 0px',
-    threshold: 0
+  const templates = {
+    home: document.getElementById('homeTemplate').innerHTML,
+    about: document.getElementById('aboutTemplate').innerHTML,
+    skills: document.getElementById('skillsTemplate').innerHTML,
+    projects: document.getElementById('projectsTemplate').innerHTML,
+    reflection: document.getElementById('reflectionTemplate').innerHTML
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          }
-        });
+  const gradients = {
+    home: 'var(--gradient-1)',
+    about: 'var(--gradient-2)',
+    skills: 'var(--gradient-3)',
+    projects: 'var(--gradient-4)',
+    reflection: 'var(--gradient-5)'
+  };
+
+  let currentSection = 'home';
+  let isTransitioning = false;
+
+  function updateCenterButton(isHome) {
+    if (isHome) {
+      navCenter.style.transform = 'scale(1.05)';
+      navCenter.querySelector('.profile-circle').style.boxShadow = '0 0 40px rgba(255, 107, 157, 0.8)';
+    } else {
+      navCenter.style.transform = 'scale(1)';
+      navCenter.querySelector('.profile-circle').style.boxShadow = '0 0 30px rgba(255, 107, 157, 0.5)';
+    }
+  }
+
+  function loadSection(sectionName) {
+    if (isTransitioning || sectionName === currentSection) return;
+    isTransitioning = true;
+
+    updateCenterButton(sectionName === 'home');
+
+    navItems.forEach(item => {
+      if (item.dataset.section === sectionName) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
       }
     });
-  }, observerOptions);
 
-  sections.forEach(section => {
-    observer.observe(section);
-  });
+    sectionContent.classList.add('hidden');
 
-  const cards = document.querySelectorAll('.about-card, .skill-card, .project-card, .reflection-card');
+    clipOverlay.style.background = gradients[sectionName];
+    clipOverlay.classList.add('expanding');
+    clipOverlay.classList.remove('shrinking');
 
-  const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
+    setTimeout(() => {
+      mainSection.className = 'main-section ' + sectionName;
+      sectionContent.innerHTML = templates[sectionName];
+      currentSection = sectionName;
+    }, 600);
 
-  cards.forEach(card => {
-    cardObserver.observe(card);
-  });
+    setTimeout(() => {
+      clipOverlay.classList.remove('expanding');
+      clipOverlay.classList.add('shrinking');
+    }, 800);
 
-  document.querySelectorAll('.welcome-card, .about-card, .skill-card, .project-card, .reflection-card').forEach(card => {
-    card.addEventListener('mouseenter', function (e) {
-      const rect = this.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+    setTimeout(() => {
+      sectionContent.classList.remove('hidden');
+    }, 900);
 
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+    setTimeout(() => {
+      clipOverlay.classList.remove('shrinking');
+      isTransitioning = false;
+    }, 1600);
+  }
 
-      const rotateX = (y - centerY) / 20;
-      const rotateY = (centerX - x) / 20;
-
-      this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
-    });
-
-    card.addEventListener('mousemove', function (e) {
-      const rect = this.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = (y - centerY) / 20;
-      const rotateY = (centerX - x) / 20;
-
-      this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
-    });
-
-    card.addEventListener('mouseleave', function () {
-      this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const section = item.dataset.section;
+      loadSection(section);
     });
   });
 
-  const skillIcons = document.querySelectorAll('.skill-icon, .card-icon, .reflection-icon');
-  skillIcons.forEach(icon => {
-    icon.addEventListener('mouseenter', function () {
-      this.style.animation = 'pulse 0.6s ease-in-out';
-    });
+  navCenter.addEventListener('click', () => {
+    loadSection('home');
+  });
 
-    icon.addEventListener('animationend', function () {
-      this.style.animation = '';
+  // Auto-carousel functionality
+  function initCarousels() {
+    const carousels = document.querySelectorAll('.carousel-images');
+
+    carousels.forEach(carousel => {
+      const images = carousel.querySelectorAll('img');
+      if (images.length <= 1) return;
+
+      let currentIndex = 0;
+
+      setInterval(() => {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('active');
+      }, 3000);
+    });
+  }
+
+  // Initialize home section on page load
+  mainSection.className = 'main-section home';
+  sectionContent.innerHTML = templates.home;
+  updateCenterButton(true);
+
+  // Initialize carousels when projects section is loaded
+  const originalLoadSection = loadSection;
+  function loadSectionWithCarousel(sectionName) {
+    originalLoadSection(sectionName);
+    if (sectionName === 'projects') {
+      setTimeout(initCarousels, 1000);
+    }
+  }
+
+  // Override loadSection calls
+  navItems.forEach(item => {
+    item.removeEventListener('click', () => { });
+    item.addEventListener('click', () => {
+      const section = item.dataset.section;
+      loadSectionWithCarousel(section);
     });
   });
 });
-
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.15); }
-    }
-`;
-document.head.appendChild(style);
