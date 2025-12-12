@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sectionContent.classList.add('hidden');
 
-    clipOverlay.style.background = gradients[sectionName];
     clipOverlay.classList.add('expanding');
     clipOverlay.classList.remove('shrinking');
 

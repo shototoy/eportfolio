@@ -211,7 +211,6 @@
     </script>
 
     <script id="projectsTemplate" type="text/template">
-        <h2 class="section-title">Projects & Activities</h2>
         <div class="activities-container">
             <div class="activity-row">
                 <div class="activity-carousel">
@@ -244,7 +243,6 @@
     </script>
 
     <script id="reflectionTemplate" type="text/template">
-        <h2 class="section-title">Reflection</h2>
         <div class="reflection-layout">
             <div class="reflection-card">
                 <div class="reflection-number">01</div>
