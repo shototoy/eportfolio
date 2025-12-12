@@ -219,7 +219,7 @@ body {
 	grid-template-columns: 1.3fr 1fr;
 	gap: 4rem;
 	align-items: center;
-	padding-left: 4rem;
+	padding-left: 8rem;
 }
 
 .greeting {
@@ -486,7 +486,7 @@ body {
 	gap: 3rem;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding-left: 8rem;
+	padding-left: 9rem;
 }
 
 .reflection-card {

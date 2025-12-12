@@ -10,7 +10,7 @@
     <div class="circular-nav">
         <div class="nav-center" data-section="home">
             <div class="profile-circle">
-                <img src="profile.png" alt="Johnica Keira M. Sulmaca">
+                <img src="avatar.png" alt="Johnica Keira M. Sulmaca">
             </div>
         </div>
         <div class="nav-items">
