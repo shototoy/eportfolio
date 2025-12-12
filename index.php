@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Sidebar Navigation -->
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h2 class="logo">Cel<span>.</span></h2>
@@ -59,7 +58,6 @@
         </ul>
     </nav>
 
-    <!-- Sidebar Toggle Button -->
     <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -68,9 +66,7 @@
         </svg>
     </button>
 
-    <!-- Main Content -->
     <main class="main-content">
-        <!-- Home Section -->
         <section id="home" class="hero-section">
             <div class="container">
                 <div class="hero-grid">
@@ -91,7 +87,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="about-section">
             <div class="container">
                 <div class="section-header">
@@ -164,11 +159,13 @@
                             </svg>
                         </div>
                         <h3>Skills & Competencies</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Flexible</span>
-                            <span class="tag">Calm</span>
-                            <span class="tag">Friendly</span>
-                        </div>
+                        <ul class="trait-list">
+                            <li>Flexible</li>
+                            <li>Calm</li>
+                            <li>Friendly</li>
+                            <li>Easy to talk to once comfortable</li>
+                            <li>Respectful towards others</li>
+                        </ul>
                     </div>
 
                     <div class="about-card">
@@ -199,27 +196,10 @@
                             <li>Gain more experience and confidence</li>
                         </ul>
                     </div>
-
-                    <div class="about-card">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                            </svg>
-                        </div>
-                        <h3>Strengths & Unique Traits</h3>
-                        <ul class="trait-list">
-                            <li>Easy to talk to once comfortable</li>
-                            <li>Respectful towards others</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="skills-section">
             <div class="container">
                 <div class="section-header">
@@ -246,11 +226,29 @@
                         <h3>CSS</h3>
                         <p>Styling & Design</p>
                     </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h18v18H3zM12 8v8m-4-4h8"></path>
+                            </svg>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <p>Interactivity & Logic</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 16v-4M12 8h.01"></path>
+                            </svg>
+                        </div>
+                        <h3>PHP</h3>
+                        <p>Server-Side Development</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects/Activities Section -->
         <section id="projects" class="projects-section">
             <div class="container">
                 <div class="section-header">
@@ -282,7 +280,6 @@
             </div>
         </section>
 
-        <!-- Reflection Section -->
         <section id="reflection" class="reflection-section">
             <div class="container">
                 <div class="section-header">
