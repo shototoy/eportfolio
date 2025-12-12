@@ -149,7 +149,7 @@ body {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: var(--khaki);
+	background: var(--dark-chocolate);
 	clip-path: circle(0% at 160px calc(100vh - 150px));
 	transition: clip-path 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 	z-index: 998;
