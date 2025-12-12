@@ -317,13 +317,29 @@ header {
 	padding: 5px 0;
 }
 
+/* Timeline adjustments */
 .timeline {
-	border-left: 2px solid var(--ink);
-	padding-left: 15px;
+	border-left: 1px solid var(--ink);
+	/* Thinner line */
+	padding-left: 20px;
+	margin-left: 5px;
 }
 
 .timeline li {
 	margin-bottom: 20px;
+	position: relative;
+}
+
+.timeline li::before {
+	content: '';
+	position: absolute;
+	left: -25px;
+	/* Adjust to hit the line */
+	top: 6px;
+	width: 9px;
+	height: 9px;
+	background: var(--ink);
+	border-radius: 50%;
 }
 
 .timeline .year {
@@ -339,6 +355,12 @@ header {
 	font-weight: 700;
 }
 
+.chip-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
 .chip {
 	border: 1px solid var(--ink);
 	padding: 5px 10px;
@@ -346,6 +368,17 @@ header {
 	text-transform: uppercase;
 	background: transparent;
 	border-radius: 0;
+	transition: all 0.2s ease;
+	cursor: default;
+}
+
+.chip:hover {
+	background: var(--ink);
+	color: var(--paper);
+}
+
+.chip i {
+	margin-right: 5px;
 }
 
 /* Skills Grid - Modernist */
@@ -391,8 +424,12 @@ header {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 0;
-	height: 100%;
+	height: auto;
+	/* Let content dictate height */
+	max-height: 65vh;
+	/* Cap it */
 	border: 1px solid var(--ink);
+	align-content: center;
 }
 
 .project-card {
@@ -406,28 +443,43 @@ header {
 }
 
 .card-image {
-	flex: 2;
+	height: 280px;
+	/* Fixed height for consistency */
 	overflow: hidden;
 	border-bottom: 1px solid var(--ink);
+	position: relative;
+}
+
+.card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: filter 0.4s ease, transform 0.5s ease;
+}
+
+.project-card:hover .card-image img {
+	filter: grayscale(0%) contrast(1);
+	/* Restore color */
+	transform: scale(1.03);
 }
 
 .card-content {
-	flex: 1;
-	padding: 20px;
+	flex: 0 0 auto;
+	padding: 10px;
 	display: flex;
 	flex-direction: column;
-	justify-content: cener;
+	justify-content: flex-start;
 }
 
 .card-content h3 {
-	font-size: 2rem;
-	margin-bottom: 10px;
+	font-size: 1.5rem;
+	margin-bottom: 2px;
 }
 
 .card-content p {
 	font-family: var(--font-body);
 	text-transform: uppercase;
-	font-size: 0.8rem;
+	font-size: 0.75rem;
 	letter-spacing: 2px;
 }
 
@@ -463,9 +515,17 @@ footer {
 	right: 20px;
 	font-size: 0.7rem;
 	background: var(--paper);
-	padding: 2px 5px;
+	padding: 5px 10px;
 	border: 1px solid var(--ink);
 	z-index: 1001;
+	opacity: 0.5;
+	/* Translucent default */
+	transition: opacity 0.3s ease;
+}
+
+footer:hover {
+	opacity: 1;
+	/* Opaque on hover */
 }
 
 /* Mobile */
