@@ -1,0 +1,56 @@
+<svg width="100%" height="100%" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <defs>
+    <!-- Dark Chocolate Rose Master Definition -->
+    <g id="rose-chocolate">
+      <ellipse cx="0" cy="0" rx="30" ry="25" fill="#420100" stroke="#2a0000" stroke-width="2"/>
+      <ellipse cx="-15" cy="-6" rx="20" ry="16" fill="#520100" stroke="#2a0000" stroke-width="1.5"/>
+      <ellipse cx="15" cy="-6" rx="20" ry="16" fill="#520100" stroke="#2a0000" stroke-width="1.5"/>
+      <ellipse cx="0" cy="10" rx="22" ry="18" fill="#620100" stroke="#2a0000" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-15" rx="16" ry="12" fill="#320100" stroke="#2a0000" stroke-width="1"/>
+      <circle cx="0" cy="0" r="8" fill="#220100" stroke="#2a0000" stroke-width="1"/>
+    </g>
+    
+    <!-- Smaller Maroon Rose for lower right -->
+    <g id="rose-maroon-small">
+      <ellipse cx="0" cy="0" rx="15" ry="12" fill="#4a0000" stroke="#2a0000" stroke-width="1.5"/>
+      <ellipse cx="-8" cy="-3" rx="10" ry="8" fill="#5a0000" stroke="#2a0000" stroke-width="1"/>
+      <ellipse cx="8" cy="-3" rx="10" ry="8" fill="#5a0000" stroke="#2a0000" stroke-width="1"/>
+      <ellipse cx="0" cy="5" rx="12" ry="9" fill="#6a0000" stroke="#2a0000" stroke-width="1"/>
+      <ellipse cx="0" cy="-8" rx="8" ry="6" fill="#3a0000" stroke="#2a0000" stroke-width="1"/>
+      <circle cx="0" cy="0" r="4" fill="#2a0000" stroke="#2a0000" stroke-width="0.8"/>
+    </g>
+  </defs>
+  
+  <!-- UPPER LEFT: BED OF ROSES (Dense, Huge, Dark Chocolate) -->
+  <g transform="translate(0,0) scale(1.3)">
+    <!-- Base Vines -->
+    <path d="M 0,0 Q 150,80 300,100 Q 450,120 500,200" fill="none" stroke="#2a0000" stroke-width="8" opacity="0.8"/>
+    <path d="M 0,50 Q 100,100 200,150 Q 300,200 350,300" fill="none" stroke="#2a0000" stroke-width="7" opacity="0.8"/>
+    <path d="M 50,0 Q 120,120 150,250 Q 180,380 200,450" fill="none" stroke="#2a0000" stroke-width="7" opacity="0.8"/>
+    
+    <!-- Dense Cluster of Huge Roses -->
+    <use href="#rose-chocolate" transform="translate(60, 60) rotate(-15)"/>
+    <use href="#rose-chocolate" transform="translate(140, 40) rotate(20)"/>
+    <use href="#rose-chocolate" transform="translate(200, 100) rotate(-30)"/>
+    <use href="#rose-chocolate" transform="translate(80, 150) rotate(45)"/>
+    <use href="#rose-chocolate" transform="translate(160, 200) rotate(-10)"/>
+    <use href="#rose-chocolate" transform="translate(260, 160) rotate(15)"/>
+    <use href="#rose-chocolate" transform="translate(350, 220) rotate(-25)"/>
+    <use href="#rose-chocolate" transform="translate(280, 280) rotate(60)"/>
+    <use href="#rose-chocolate" transform="translate(150, 320) rotate(-40)"/>
+    <use href="#rose-chocolate" transform="translate(50, 240) rotate(10)"/>
+    <use href="#rose-chocolate" transform="translate(220, 380) rotate(25)"/>
+    <use href="#rose-chocolate" transform="translate(380, 120) rotate(-5)"/>
+    <use href="#rose-chocolate" transform="translate(420, 250) rotate(35)"/>
+  </g>
+
+  <!-- LOWER RIGHT: SMALLER VINES (Subtle) -->
+  <g transform="translate(1920, 1080) rotate(180) scale(0.8)">
+    <path d="M 0,0 Q 100,50 200,60" fill="none" stroke="#2a0000" stroke-width="4" opacity="0.6"/>
+    <path d="M 0,0 Q 60,80 100,150" fill="none" stroke="#2a0000" stroke-width="4" opacity="0.6"/>
+    
+    <use href="#rose-maroon-small" transform="translate(80, 40) rotate(20)"/>
+    <use href="#rose-maroon-small" transform="translate(150, 70) rotate(-30)"/>
+    <use href="#rose-maroon-small" transform="translate(50, 100) rotate(45)"/>
+  </g>
+</svg>

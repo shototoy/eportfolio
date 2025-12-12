@@ -50,11 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sectionContent.classList.add('hidden');
 
+    // Raise overlay above clip-path during transition
+    mainSection.classList.add('transitioning');
+
     clipOverlay.classList.add('expanding');
     clipOverlay.classList.remove('shrinking');
 
     setTimeout(() => {
-      mainSection.className = 'main-section ' + sectionName;
+      mainSection.className = 'main-section ' + sectionName + ' transitioning';
       sectionContent.innerHTML = templates[sectionName];
       currentSection = sectionName;
     }, 600);
@@ -70,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       clipOverlay.classList.remove('shrinking');
+      // Lower overlay back below content after transition
+      mainSection.classList.remove('transitioning');
       isTransitioning = false;
     }, 1600);
   }
@@ -96,9 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
       let currentIndex = 0;
 
       setInterval(() => {
-        images[currentIndex].classList.remove('active');
+        const prevIndex = currentIndex;
         currentIndex = (currentIndex + 1) % images.length;
+
+        // Mark current as exiting
+        images[prevIndex].classList.add('exiting');
+        images[prevIndex].classList.remove('active');
+
+        // Mark next as active
         images[currentIndex].classList.add('active');
+
+        // Clean up exiting class after transition
+        setTimeout(() => {
+          images[prevIndex].classList.remove('exiting');
+        }, 650);
       }, 3000);
     });
   }
