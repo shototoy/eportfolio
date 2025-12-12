@@ -1,7 +1,22 @@
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var images = window.ABOUT_IMAGES || [];
+  var imgEl = document.getElementById('about-slideshow');
+  var idx = 0;
+  if (imgEl && images.length > 1) {
+    setInterval(function () {
+      idx = (idx + 1) % images.length;
+      imgEl.src = images[idx];
+    }, 2500);
+  }
+});
 const yearEl = document.getElementById('currentYear');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Dynamically expose navbar and footer heights for layout calculations
+
+
 (function setLayoutVars() {
   function applyHeights() {
     const nav = document.getElementById('navbar');
@@ -9,7 +24,6 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     const navRect = nav ? nav.getBoundingClientRect() : null;
     const footerRect = footer ? footer.getBoundingClientRect() : null;
 
-    // Use fractional pixel precision for accurate layout
     const navH = navRect ? navRect.height : 70;
     const footerH = footerRect ? footerRect.height : 60;
 
@@ -25,11 +39,11 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   // Re-apply on resize and after fonts load (heights may change)
   window.addEventListener('resize', applyHeights, { passive: true });
   (document.fonts && document.fonts.ready?.then) && document.fonts.ready.then(applyHeights);
-  // Fallback reflow after a tick
+
   setTimeout(applyHeights, 300);
 })();
 
-(function() {
+(function () {
   const menuToggle = document.getElementById('menuToggle') || document.querySelector('.menu-toggle');
   const navMenu = document.getElementById('navMenu') || document.getElementById('navLinks') || document.querySelector('nav ul') || document.querySelector('.nav-links');
   const navbar = document.getElementById('navbar') || document.querySelector('nav');
@@ -98,31 +112,15 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     sections.forEach(section => observer.observe(section));
   }
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href === '#' || href === '#!') return;
 
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        const navHeight = document.querySelector('nav')?.offsetHeight || 70;
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
 
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-        history.pushState(null, null, href);
-        target.setAttribute('tabindex', '-1');
-        target.focus({ preventScroll: true });
-      }
-    });
-  });
 
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) closeMenu();
   });
 })();
 
-(function() {
+(function () {
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -153,7 +151,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
 })();
 
-(function() {
+(function () {
   let progressBar = document.querySelector('.scroll-progress');
 
   if (!progressBar) {
@@ -175,7 +173,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   updateScrollProgress();
 })();
 
-(function() {
+(function () {
   let backToTop = document.querySelector('.back-to-top');
 
   if (!backToTop) {
@@ -200,14 +198,14 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
 
 document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-  img.addEventListener('load', function() {
+  img.addEventListener('load', function () {
     this.classList.add('loaded');
   });
   if (img.complete) img.classList.add('loaded');
 });
 
 document.querySelectorAll('.btn, .cta-btn, button[type="submit"]').forEach(btn => {
-  btn.addEventListener('click', function(e) {
+  btn.addEventListener('click', function (e) {
     const ripple = document.createElement('span');
     const rect = this.getBoundingClientRect();
     const size = Math.max(rect.width, rect.height);
@@ -244,20 +242,20 @@ if (!document.querySelector('#ripple-animation-style')) {
 
 if (window.innerWidth > 768) {
   document.querySelectorAll('.btn, .social-link, .project-link, .nav-cta').forEach(el => {
-    el.addEventListener('mousemove', function(e) {
+    el.addEventListener('mousemove', function (e) {
       const rect = this.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
       this.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
     });
 
-    el.addEventListener('mouseleave', function() {
+    el.addEventListener('mouseleave', function () {
       this.style.transform = 'translate(0, 0)';
     });
   });
 }
 
-(function() {
+(function () {
   const parallaxElements = document.querySelectorAll('.hero, .parallax-section');
 
   if (parallaxElements.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -278,18 +276,18 @@ document.querySelectorAll('form').forEach(form => {
   const inputs = form.querySelectorAll('input, textarea, select');
 
   inputs.forEach(input => {
-    input.addEventListener('blur', function() {
+    input.addEventListener('blur', function () {
       this.classList.toggle('error', this.value && !this.checkValidity());
     });
 
-    input.addEventListener('input', function() {
+    input.addEventListener('input', function () {
       if (this.classList.contains('error') && this.checkValidity()) {
         this.classList.remove('error');
       }
     });
   });
 
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', function (e) {
     const submitBtn = this.querySelector('[type="submit"]');
     if (submitBtn && !submitBtn.classList.contains('loading')) {
       submitBtn.classList.add('loading');
@@ -307,7 +305,7 @@ document.querySelectorAll('.btn, .cta-btn, .contact-link').forEach(btn => {
   btn.setAttribute('role', 'button');
   if (!btn.getAttribute('tabindex')) btn.setAttribute('tabindex', '0');
 
-  btn.addEventListener('keydown', function(e) {
+  btn.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       this.click();
@@ -315,6 +313,6 @@ document.querySelectorAll('.btn, .cta-btn, .contact-link').forEach(btn => {
   });
 });
 
-window.addEventListener('error', function(e) {
+window.addEventListener('error', function (e) {
   console.error('JavaScript Error:', e.error);
 }, true);
