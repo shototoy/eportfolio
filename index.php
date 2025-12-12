@@ -42,7 +42,7 @@
                 </div>
                 <div class="hero-image">
                     <div class="image-frame">
-                        <img src="profile.jpg" alt="Nicol Atasha H. Cabrera">
+                        <img src="profile.png" alt="Nicol Atasha H. Cabrera">
                     </div>
                 </div>
             </div>
@@ -150,7 +150,7 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="card-image">
-                            <img src="about1.jpg" alt="Intramurals">
+                            <img src="about1.png" alt="Intramurals">
                         </div>
                         <div class="card-content">
                             <h3>Intramurals</h3>
@@ -159,7 +159,7 @@
                     </div>
                     <div class="project-card">
                         <div class="card-image">
-                            <img src="about2.jpg" alt="ICPEP Convention">
+                            <img src="about2.png" alt="ICPEP Convention">
                         </div>
                         <div class="card-content">
                             <h3>ICPEP Convention</h3>
