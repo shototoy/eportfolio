@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const navItems = document.querySelectorAll('.nav-item');
   const contentLeft = document.getElementById('contentLeft');
 
   const templates = {
@@ -14,14 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function loadSection(sectionName) {
     if (sectionName === currentSection) return;
 
-    navItems.forEach(item => {
-      if (item.dataset.section === sectionName) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-    });
-
     contentLeft.classList.add('animating');
 
     setTimeout(() => {
@@ -31,18 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       contentLeft.classList.remove('animating');
-    }, 700);
+    }, 1200);
 
     currentSection = sectionName;
   }
 
-  navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const section = item.dataset.section;
-      loadSection(section);
-    });
-  });
-
+  // Initialize with home content
   contentLeft.innerHTML = templates.home;
-});
 
+  // Add event listeners for nav words in text portrait
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('nav-word')) {
+      const section = e.target.dataset.section;
+      loadSection(section);
+    }
+  });
+});

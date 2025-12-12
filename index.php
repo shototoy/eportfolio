@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="nav-container">
-        <button class="nav-item active" data-section="home">Home</button>
-        <button class="nav-item" data-section="about">About Me</button>
-        <button class="nav-item" data-section="skills">Skills</button>
-        <button class="nav-item" data-section="reflection">Reflection</button>
-    </nav>
 
     <div class="main-section" id="mainSection">
         <div class="split-layout">
@@ -20,7 +14,27 @@
             <div class="content-right">
                 <div class="text-portrait-container">
                     <div class="text-portrait" style="background-image: url('profile.png');">
-<?php for($i = 0; $i < 94; $i++) { echo "MY NAME IS JELAND. "; } ?>
+<?php 
+$text = "MY NAME IS JELAND. ";
+$output = "";
+$navWords = [
+    ['word' => 'HOME', 'section' => 'home'],
+    ['word' => 'ABOUT', 'section' => 'about'],
+    ['word' => 'SKILLS', 'section' => 'skills'],
+    ['word' => 'REFLECTION', 'section' => 'reflection']
+];
+$positions = [23, 63, 88, 131];
+$navIndex = 0;
+
+for($i = 0; $i < 150; $i++) {
+    $output .= $text;
+    if (in_array($i, $positions) && $navIndex < count($navWords)) {
+        $output .= '<span class="nav-word" data-section="' . $navWords[$navIndex]['section'] . '">' . $navWords[$navIndex]['word'] . '</span> ';
+        $navIndex++;
+    }
+}
+echo $output;
+?>
                     </div>
                 </div>
             </div>
@@ -112,4 +126,8 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
 
