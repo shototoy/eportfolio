@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
   const links = document.querySelectorAll('.nav-links li a');
   const mainWrapper = document.querySelector('.main-wrapper');
+  const sections = document.querySelectorAll('section, header');
+  const navLi = document.querySelectorAll('.nav-links li a');
 
   if (menuToggle) {
     menuToggle.addEventListener('click', () => {
@@ -41,10 +43,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const sections = document.querySelectorAll('section, header');
-  const navLi = document.querySelectorAll('.nav-links li a');
+  let lastScrollLeft = mainWrapper.scrollLeft;
+  let scrollVelocity = 0;
+  let blurTimeout;
 
   mainWrapper.addEventListener('scroll', () => {
+    const currentScrollLeft = mainWrapper.scrollLeft;
+    scrollVelocity = Math.abs(currentScrollLeft - lastScrollLeft);
+    lastScrollLeft = currentScrollLeft;
+
+    const blurAmount = Math.min(scrollVelocity / 15, 8);
+
+    sections.forEach(section => {
+      section.style.filter = `blur(${blurAmount}px)`;
+    });
+
+    clearTimeout(blurTimeout);
+    blurTimeout = setTimeout(() => {
+      sections.forEach(section => {
+        section.style.filter = 'blur(0px)';
+      });
+    }, 100);
+
     let current = '';
     sections.forEach(section => {
       const sectionLeft = section.offsetLeft;

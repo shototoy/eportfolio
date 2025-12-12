@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicol Atasha H. Cabrera | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -100,9 +96,9 @@
                     <div class="about-card hobbies">
                         <h3>Hobbies</h3>
                         <div class="chip-container">
-                            <span class="chip"><i class="fas fa-volleyball-ball"></i> Playing Volleyball</span>
-                            <span class="chip"><i class="fas fa-basketball-ball"></i> Playing Basketball</span>
-                            <span class="chip"><i class="fas fa-tv"></i> Watching TV</span>
+                            <span class="chip"><svg class="chip-icon"><use href="icons.svg#volleyball"></use></svg> Playing Volleyball</span>
+                            <span class="chip"><svg class="chip-icon"><use href="icons.svg#basketball"></use></svg> Playing Basketball</span>
+                            <span class="chip"><svg class="chip-icon"><use href="icons.svg#tv"></use></svg> Watching TV</span>
                         </div>
                     </div>
 
@@ -122,19 +118,19 @@
                 </div>
                 <div class="skills-wrapper">
                     <div class="skill-item">
-                        <i class="fas fa-code"></i>
+                        <svg class="icon"><use href="icons.svg#code"></use></svg>
                         <h4>Web Development</h4>
                     </div>
                     <div class="skill-item">
-                        <i class="fas fa-users"></i>
+                        <svg class="icon"><use href="icons.svg#users"></use></svg>
                         <h4>Teamwork & Collaboration</h4>
                     </div>
                     <div class="skill-item">
-                        <i class="fas fa-sync-alt"></i>
+                        <svg class="icon"><use href="icons.svg#sync"></use></svg>
                         <h4>Adaptability</h4>
                     </div>
                     <div class="skill-item">
-                        <i class="fas fa-lightbulb"></i>
+                        <svg class="icon"><use href="icons.svg#lightbulb"></use></svg>
                         <h4>Willingness to Learn</h4>
                     </div>
                 </div>
