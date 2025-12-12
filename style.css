@@ -26,6 +26,8 @@
 }
 
 body {
+	margin: 0;
+	padding: 0;
 	font-family: 'Poppins', sans-serif;
 	background: #0f0f1e;
 	color: white;
@@ -138,7 +140,7 @@ body {
 
 /* MAIN SECTION LAYOUT RESET */
 .main-section {
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 	position: relative;
 	display: flex;
@@ -147,7 +149,6 @@ body {
 	background: var(--gradient-1);
 	transition: background 0.4s ease;
 	overflow: hidden;
-	/* No outer scroll, internal scroll if needed */
 }
 
 .main-section::before {
@@ -193,7 +194,7 @@ body {
 
 .section-content {
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	max-width: 1600px;
 	padding: 0;
 	margin: 0;
@@ -207,8 +208,22 @@ body {
 	z-index: 1;
 	overflow-y: auto;
 	/* Internal scrolling for content */
-	padding-bottom: 6rem;
-	/* Space for dock */
+	box-sizing: border-box;
+}
+
+/* Home page: left padding only */
+.main-section.home .section-content {
+	padding-left: 4rem;
+	padding-right: 0;
+}
+
+/* Other pages: equal horizontal padding */
+.main-section.about .section-content,
+.main-section.skills .section-content,
+.main-section.projects .section-content,
+.main-section.reflection .section-content {
+	padding-left: 4rem;
+	padding-right: 4rem;
 }
 
 .section-content.hidden {
@@ -228,12 +243,13 @@ body {
 .split-layout {
 	display: flex;
 	flex-direction: row;
-	gap: 4rem;
+	gap: 0;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	width: 100%;
-	height: 100%;
-	padding: 2rem;
+	height: auto;
+	max-height: 100vh;
+	padding: 0;
 }
 
 .greeting {
@@ -276,23 +292,23 @@ body {
 }
 
 .image-frame {
-	width: 100%;
-	max-width: 450px;
-	aspect-ratio: 3/4;
-	border-radius: 30px;
+	width: auto;
+	height: 100vh;
+	border-radius: 0;
 	overflow: hidden;
 	box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-	border: 5px solid white;
+	border: none;
+	border-left: 5px solid white;
 	position: relative;
-	margin: 0 auto;
+	margin: 0;
 }
 
 .image-frame::before {
 	content: '';
 	position: absolute;
-	inset: -5px;
+	inset: 0;
 	background: var(--gradient-2);
-	border-radius: 30px;
+	border-radius: 0;
 	z-index: -1;
 }
 
@@ -327,173 +343,334 @@ body {
 
 .hex-card:nth-child(4),
 .hex-card:nth-child(5),
-.hex-card:nth-child(6) {
+.hex-card:nth-child(6) {}
 
-	/* UNIFIED CARD SYSTEM */
-	.content-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 2rem;
-		width: 100%;
-		max-width: 1400px;
-		padding: 2rem;
-		justify-content: center;
-	}
+/* UNIFIED CARD SYSTEM - COMPACT FIT */
+/* Ensure main sections respect viewport size */
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+}
 
-	/* Specific layout for Home/Profile */
-	.profile-layout {
-		display: flex;
-		gap: 3rem;
-		align-items: center;
-		justify-content: center;
+.section-content {
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+
+.content-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 1.5rem;
+	/* Standard gap */
+	width: 100%;
+	max-width: 1200px;
+	padding: 2rem;
+	align-content: center;
+}
+
+/* TILED GRID - Vertical Rows */
+.tiled-grid {
+	display: flex;
+	flex-direction: column;
+	/* Force Vertical - rows instead of columns */
+	gap: 1px;
+	background: var(--imperial-gold);
+	border: 1px solid var(--imperial-gold);
+	border-radius: 12px;
+	overflow: hidden;
+	width: 100%;
+	/* Use FULL width within padded container */
+	max-width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height of section-content */
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.tiled-grid .info-card {
+	flex: 1;
+	/* Distribute space evenly - each row gets equal height */
+	background: rgba(16, 0, 43, 0.85);
+	backdrop-filter: blur(10px);
+	border: none;
+	border-radius: 0;
+	padding: 2rem 3rem;
+	/* Adjusted padding for row layout */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/* Center content vertically */
+	min-height: 0;
+	/* Allow shrinking */
+	overflow-y: auto;
+	/* Allow scrolling if content is too long */
+}
+
+/* Specific adjustment for small screens or too many items */
+@media (max-width: 1024px) {
+	.tiled-grid {
 		flex-wrap: wrap;
-		width: 100%;
-		height: 100%;
+		/* Only wrap on tablets */
+		height: auto;
+		max-height: 85vh;
+		overflow-y: auto;
 	}
 
-	.info-card {
-		background: rgba(16, 0, 43, 0.5);
-		backdrop-filter: blur(10px);
-		border: 1px solid var(--imperial-gold);
-		border-radius: 16px;
-		padding: 2rem;
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		transition: all 0.3s ease;
-		position: relative;
-		overflow: hidden;
-		height: 100%;
+	.tiled-grid .info-card {
+		flex: 1 1 45%;
+		/* 2 columns */
+	}
+}
+
+/* Standard Info Card styling within Tiled Grid */
+.tiled-grid .info-card h3 {
+	font-size: 1.5rem;
+	/* Increased Title */
+	margin-bottom: 1.2rem;
+	white-space: nowrap;
+	/* Prevent title wrap */
+	font-weight: 800;
+}
+
+.tiled-grid .info-card h3 svg {
+	width: 36px;
+	/* Increased Icons */
+	height: 36px;
+	stroke-width: 1.5;
+}
+
+.tiled-grid .info-card ul li,
+.tiled-grid .info-card p {
+	font-size: 1.05rem;
+	/* Increased Text (was 0.85) */
+	line-height: 1.6;
+}
+
+/* Standard Info Card (Default) */
+.info-card {
+	background: rgba(16, 0, 43, 0.6);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 214, 10, 0.3);
+	border-radius: 16px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	transition: all 0.3s ease;
+	position: relative;
+	height: 100%;
+}
+
+.info-card h3 {
+	font-family: 'Cinzel', serif;
+	color: var(--imperial-gold);
+	font-size: 1.5rem;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	font-weight: 700;
+}
+
+.info-card h3 svg {
+	width: 28px;
+	height: 28px;
+	stroke: var(--imperial-gold);
+	flex-shrink: 0;
+}
+
+.info-card p,
+.info-card li {
+	color: var(--platinum);
+	line-height: 1.5;
+	font-size: 1rem;
+	margin: 0;
+}
+
+/* Specific layout for Home/Profile */
+.profile-layout {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 100%;
+	gap: 4rem;
+	padding: 0 4rem;
+	/* Add side padding */
+}
+
+
+
+.content-left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	text-align: left;
+	padding-bottom: 6rem;
+	padding-right: 2rem;
+	/* Space for dock and gap from image */
+}
+
+.content-right {
+	flex: 0 0 auto;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.info-card:hover {
+	transform: translateY(-5px);
+	background: rgba(16, 0, 43, 0.7);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	border-color: var(--imperial-gold);
+}
+
+.info-card ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.info-card li {
+	margin-bottom: 0.5rem;
+	padding-left: 1.2rem;
+	position: relative;
+}
+
+.info-card li::before {
+	content: '▹';
+	color: var(--imperial-gold);
+	position: absolute;
+	left: 0;
+}
+
+/* Home Profile Card Specifics */
+.profile-card {
+	min-width: 300px;
+	max-width: 400px;
+	text-align: center;
+	align-items: center;
+	border: 2px solid var(--imperial-gold);
+}
+
+.profile-card img {
+	width: 350px;
+	/* Increased from 250px */
+	height: 350px;
+	border-radius: 50%;
+	border-width: 4px;
+	border-style: solid;
+	border-color: var(--imperial-gold);
+	box-shadow: 0 0 30px rgba(255, 214, 10, 0.4);
+	margin-bottom: 1rem;
+	object-fit: cover;
+}
+
+.profile-card h1 {
+	font-family: 'Cinzel', serif;
+	font-size: 2rem;
+	margin: 0.5rem 0;
+	color: var(--platinum);
+}
+
+.profile-card .role {
+	color: var(--imperial-gold);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.welcome-card {
+	max-width: 600px;
+	border-left: 4px solid var(--imperial-gold);
+}
+
+/* Project Images in Cards */
+.project-img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 8px;
+	margin-bottom: 1rem;
+	border: 1px solid rgba(255, 214, 10, 0.3);
+}
+
+/* Activities Fullscreen Layout */
+.activities-fullscreen {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.activities-fullscreen::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(16, 0, 43, 0.6);
+	/* Dark overlay for better text readability */
+	z-index: 1;
+}
+
+.activities-fullscreen h1 {
+	font-family: 'Cinzel', serif;
+	font-size: 6rem;
+	font-weight: 900;
+	color: var(--imperial-gold);
+	text-shadow: 0 0 30px rgba(255, 214, 10, 0.5);
+	letter-spacing: 0.5rem;
+	margin: 0;
+	position: relative;
+	z-index: 2;
+	/* Above overlay */
+}
+
+/* Scrollbar styling for content */
+.section-content::-webkit-scrollbar {
+	width: 8px;
+}
+
+.section-content::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.section-content::-webkit-scrollbar-thumb {
+	background: var(--imperial-gold);
+	border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+	.split-layout {
+		grid-template-columns: 1fr;
+		gap: 2rem;
 	}
 
-	.info-card:hover {
-		transform: translateY(-5px);
-		background: rgba(16, 0, 43, 0.7);
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-		border-color: var(--imperial-gold);
+	.hexagon-grid,
+	.diamond-grid,
+	.wave-grid,
+	.reflection-layout {
+		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.info-card h3 {
-		font-family: 'Cinzel', serif;
-		color: var(--imperial-gold);
-		font-size: 1.5rem;
-		margin: 0;
-		display: flex;
-		align-items: center;
-		gap: 0.8rem;
+	.content-left h1 {
+		font-size: 3.5rem;
 	}
 
-	.info-card h3 svg {
-		width: 24px;
-		height: 24px;
-		stroke: var(--imperial-gold);
+	.section-title {
+		font-size: 3rem;
 	}
-
-	.info-card p {
-		color: var(--platinum);
-		line-height: 1.6;
-		font-size: 1rem;
-		margin: 0;
-	}
-
-	.info-card ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.info-card li {
-		margin-bottom: 0.5rem;
-		padding-left: 1.2rem;
-		position: relative;
-	}
-
-	.info-card li::before {
-		content: '▹';
-		color: var(--imperial-gold);
-		position: absolute;
-		left: 0;
-	}
-
-	/* Home Profile Card Specifics */
-	.profile-card {
-		min-width: 300px;
-		max-width: 400px;
-		text-align: center;
-		align-items: center;
-		border: 2px solid var(--imperial-gold);
-	}
-
-	.profile-card img {
-		width: 150px;
-		height: 150px;
-		border-radius: 50%;
-		border: 3px solid var(--imperial-gold);
-		margin-bottom: 1rem;
-		object-fit: cover;
-	}
-
-	.profile-card h1 {
-		font-family: 'Cinzel', serif;
-		font-size: 2rem;
-		margin: 0.5rem 0;
-		color: var(--platinum);
-	}
-
-	.profile-card .role {
-		color: var(--imperial-gold);
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-	}
-
-	.welcome-card {
-		max-width: 600px;
-		border-left: 4px solid var(--imperial-gold);
-	}
-
-	/* Project Images in Cards */
-	.project-img {
-		width: 100%;
-		height: 200px;
-		object-fit: cover;
-		border-radius: 8px;
-		margin-bottom: 1rem;
-		border: 1px solid rgba(255, 214, 10, 0.3);
-	}
-
-	/* Scrollbar styling for content */
-	.section-content::-webkit-scrollbar {
-		width: 8px;
-	}
-
-	.section-content::-webkit-scrollbar-track {
-		background: rgba(0, 0, 0, 0.1);
-	}
-
-	.section-content::-webkit-scrollbar-thumb {
-		background: var(--imperial-gold);
-		border-radius: 4px;
-	}
-
-	@media (max-width: 1024px) {
-		.split-layout {
-			grid-template-columns: 1fr;
-			gap: 2rem;
-		}
-
-		.hexagon-grid,
-		.diamond-grid,
-		.wave-grid,
-		.reflection-layout {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		.content-left h1 {
-			font-size: 3.5rem;
-		}
-
-		.section-title {
-			font-size: 3rem;
-		}
-	}
+}

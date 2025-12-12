@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Johnica Keira M. Sulmaca | Portfolio</title>
+    <title>Christian Hope Felarca Escleto | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,78 +34,95 @@
     <script id="homeTemplate" type="text/template">
         <div class="split-layout">
             <div class="content-left">
-                <p class="greeting">Hi, I'm Johnica Keira!</p>
-                <h1>Johnica Keira M. Sulmaca</h1>
-                <p class="intro">Hi, I'm Johnica Keira M. Sulmaca, a computer engineering student exploring web development and design. Welcome to my site where I showcase projects, share learning, and connect with others.</p>
+                <p class="greeting">Hi, I'm Christian!</p>
+                <h1>My E-Portfolio</h1>
+                <p class="intro">I am a simple and motivated person who enjoys learning new things and taking on challenges. I always try to stay responsible, respectful, and positive in everything I do. I aim to grow as a person and contribute to the people around me.</p>
                 <div class="welcome-card">
-                    <p>Hey there! Welcome to my digital playground--hope you find inspiration.</p>
+                    <p>Welcome to my page! I’m happy to have you here. This space is where I share my thoughts, experiences, and the things I enjoy. Feel free to explore, learn, and connect.</p>
                 </div>
             </div>
             <div class="content-right">
                 <div class="image-frame">
-                    <img src="profile.png" alt="Johnica Keira M. Sulmaca">
+                    <img src="profile.png" alt="Christian Hope Felarca Esclet">
                 </div>
             </div>
         </div>
     </script>
 
     <script id="homeTemplate" type="text/template">
-        <div class="profile-layout">
-            <div class="profile-card">
-                <img src="avatar.png" alt="Christian Hope F. Escleto">
-                <h1>Christian Hope F. Escleto</h1>
-                <p class="role">Computer Engineering Student</p>
+        <div class="split-layout">
+            <div class="content-left">
+                <p class="greeting">Hi, I'm Christian!</p>
+                <h1>Christian Hope Felarca Escleto</h1>
+                <p class="intro">I am a simple and motivated person who enjoys learning new things and taking on challenges. I always try to stay responsible, respectful, and positive in everything I do. I aim to grow as a person and contribute to the people around me.</p>
+                <div class="welcome-card">
+                    <p>Welcome to my page! I’m happy to have you here. This space is where I share my thoughts, experiences, and the things I enjoy. Feel free to explore, learn, and connect.</p>
+                </div>
             </div>
-            <div class="welcome-card info-card">
-                <h3>Welcome</h3>
-                <p>I am a simple and motivated person who enjoys learning new things and taking on challenges. I always try to stay responsible, respectful, and positive in everything I do. I aim to grow as a person and contribute to the people around me.</p>
-                <br>
-                <p>Welcome to my page! I’m happy to have you here. This space is where I share my thoughts, experiences, and the things I enjoy. Feel free to explore, learn, and connect.</p>
+            <div class="content-right">
+                <div class="image-frame">
+                    <img src="avatar.png" alt="Christian Hope Felarca Escleto">
+                </div>
             </div>
         </div>
     </script>
 
     <script id="aboutTemplate" type="text/template">
-        <div class="content-grid">
+        <div class="tiled-grid">        
             <div class="info-card">
                 <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg> Personal Info</h3>
                 <ul>
                     <li><strong>Name:</strong> Christian Hope F. Escleto</li>
-                    <li><strong>Age:</strong> 21 Years Old</li>
-                    <li><strong>birthday:</strong> March 15, 2004</li>
-                    <li><strong>Address:</strong> Zone 2-B, Brgy. Libertad, Surallah, South Cotabato</li>
+                    <li><strong>Age:</strong> 21 years old</li>
+                    <li><strong>Birthdate:</strong> March 15, 2004</li>
+                    <li><strong>Address:</strong> Zone 2-B, Brgy, Libertad, Surallah South Cotabato</li>
                 </ul>
             </div>
             <div class="info-card">
-                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10v6M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg> Education</h3>
+                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10v6M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg> Background</h3>
+                <p><strong>Educational background:</strong></p>
                 <ul>
-                    <li><strong>Elementary:</strong> Surallah Central Elementary School (2016-2017)</li>
-                    <li><strong>High School:</strong> Libertad National Highschool (2020-2023)</li>
-                    <li><strong>College:</strong> Sultan Kudarat State University - BS Computer Engineering</li>
+                    <li>Surallah Central Elementary School (2016-2017)</li>
+                    <li>Libetrad National Highschool (2020-2023)</li>
+                </ul>
+                <br>
+                <p><strong>Courses or trainings taken:</strong></p>
+                <ul>
+                    <li>Sultan Kudarat State University</li>
+                    <li>Bachelor of Science in Computer Engineering</li>
                 </ul>
             </div>
             <div class="info-card">
-                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg> Traits & Skills</h3>
+                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg> Competencies</h3>
                 <ul>
-                    <li>Creativity & Adaptability</li>
+                    <li>Creativity</li>
                     <li>Willingness to work well with others</li>
                     <li>Ability to follow instructions</li>
-                    <li>Hardworking, Dedicated, Responsible</li>
-                    <li>Friendly & Approachable</li>
+                    <li>Adaptability</li>
+                </ul>
+                <br>
+                <p><strong>Strength and Unique traits:</strong></p>
+                <ul>
+                    <li>Hardworking, Dedicated, Responsible, Reliable</li>
+                    <li>Willing to help others, Friendly and approachable</li>
                 </ul>
             </div>
              <div class="info-card">
                 <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg> Interests & Goals</h3>
+                 <p><strong>Hobbies:</strong></p>
                 <ul>
-                    <li><strong>Hobbies:</strong> Watching movies/anime, Playing Pickleball</li>
-                    <li><strong>Goal:</strong> To develop strong knowledge and skills that will help me in my future profession.</li>
+                    <li>Watching movies/anime</li>
+                    <li>Playing Pickleball</li>
                 </ul>
+                <br>
+                <p><strong>Career goals:</strong></p>
+                <p>To develop strong knowledge and skills that will help me in my future profession.</p>
             </div>
         </div>
     </script>
 
     <script id="skillsTemplate" type="text/template">
-        <div class="content-grid">
+        <div class="tiled-grid">
             <div class="info-card">
                 <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Web Development</h3>
                 <p>HTML & CSS</p>
@@ -125,18 +142,13 @@
     </script>
 
     <script id="projectsTemplate" type="text/template">
-        <div class="content-grid">
-            <div class="info-card">
-                <img src="activities/1.png" alt="Intramurals" class="project-img">
-                <h3>Intramurals</h3>
-                <p><strong>School Activity</strong></p>
-                <p>Participated in school intramurals, fostering teamwork, sportsmanship, and school spirit through various competitive activities.</p>
-            </div>
+        <div class="activities-fullscreen" style="background-image: url('activity1.png');">
+            <h1>INTRAMURALS</h1>
         </div>
     </script>
     
     <script id="reflectionTemplate" type="text/template">
-        <div class="content-grid">
+        <div class="tiled-grid">
             <div class="info-card">
                 <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">01.</span>Learnings</h3>
                 <p>This course helped me gain both knowledge and practical skills in technology and problem-solving. I learned how to work on projects, think critically, and collaborate effectively with others. It also taught me the value of continuous learning and adapting to new challenges.</p>
