@@ -18,10 +18,37 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetSection = document.getElementById(targetId);
 
       if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+        const allSections = document.querySelectorAll('section');
+        const allContainers = document.querySelectorAll('section .container');
+
+        allSections.forEach(section => {
+          section.style.transition = 'filter 0.25s ease-out';
+          section.style.filter = 'blur(10px)';
         });
+
+        allContainers.forEach(container => {
+          container.style.transition = 'filter 0.25s ease-out, transform 0.8s ease-out';
+          container.style.filter = 'blur(10px)';
+          container.style.transform = 'translateY(0)';
+        });
+
+        setTimeout(() => {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+
+        setTimeout(() => {
+          allSections.forEach(section => {
+            section.style.filter = 'blur(0px)';
+          });
+
+          allContainers.forEach(container => {
+            container.style.filter = 'blur(0px)';
+            container.style.transform = 'translateY(0)';
+          });
+        }, 400);
 
         navLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
@@ -29,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 768) {
           setTimeout(() => {
             sidebar.classList.remove('show');
-          }, 300);
+          }, 100);
         }
       }
     });

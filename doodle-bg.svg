@@ -1,157 +1,178 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
   <defs>
     <style>
-      .doodle { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.4; }
+      .doodle { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.5; }
       .pink { stroke: #D53F8C; }
       .teal { stroke: #319795; }
+      .fill-pink { fill: #D53F8C; opacity: 0.3; }
+      .fill-teal { fill: #319795; opacity: 0.3; }
     </style>
   </defs>
   
   <g class="doodle pink">
-    <circle cx="80" cy="250" r="28"/>
-    <circle cx="75" cy="245" r="5"/>
-    <circle cx="85" cy="245" r="5"/>
-    <path d="M 73 258 Q 80 265 87 258"/>
-    <circle cx="70" cy="235" r="3"/>
-    <circle cx="90" cy="235" r="3"/>
+    <circle cx="80" cy="280" r="22"/>
+    <line x1="80" y1="302" x2="80" y2="360"/>
+    <circle cx="80" cy="280" r="18" class="fill-pink"/>
+    <path d="M 70 275 Q 80 270 90 275" stroke-width="2"/>
+    <path d="M 70 285 Q 80 290 90 285" stroke-width="2"/>
   </g>
   
   <g class="doodle teal">
-    <ellipse cx="200" cy="280" rx="32" ry="38"/>
-    <circle cx="195" cy="275" r="4"/>
-    <circle cx="205" cy="275" r="4"/>
-    <path d="M 193 285 Q 200 292 207 285"/>
-    <line x1="185" y1="265" x2="195" y2="265"/>
-    <line x1="205" y1="265" x2="215" y2="265"/>
+    <circle cx="180" cy="290" r="26"/>
+    <circle cx="180" cy="290" r="20" class="fill-teal"/>
+    <path d="M 165 285 L 195 285" stroke-width="3"/>
+    <path d="M 165 295 L 195 295" stroke-width="3"/>
+    <circle cx="175" cy="280" r="3"/>
+    <circle cx="185" cy="280" r="3"/>
+    <line x1="180" y1="316" x2="180" y2="370"/>
   </g>
   
   <g class="doodle pink">
-    <path d="M 320 260 L 340 240 L 360 260 L 350 290 L 330 290 Z"/>
-    <circle cx="340" cy="265" r="4"/>
-    <circle cx="335" cy="275" r="3"/>
-    <circle cx="345" cy="275" r="3"/>
-    <path d="M 333 282 Q 340 287 347 282"/>
+    <circle cx="300" cy="270" r="20"/>
+    <circle cx="300" cy="270" r="15" class="fill-pink"/>
+    <path d="M 290 265 Q 300 260 310 265"/>
+    <path d="M 290 275 Q 300 280 310 275"/>
+    <path d="M 285 270 Q 300 270 315 270"/>
+    <line x1="300" y1="290" x2="300" y2="350"/>
   </g>
   
   <g class="doodle teal">
-    <rect x="450" y="240" width="45" height="60" rx="6"/>
-    <rect x="460" y="250" width="25" height="40" rx="4"/>
-    <circle cx="467" cy="262" r="3"/>
-    <circle cx="478" cy="262" r="3"/>
-    <path d="M 465 272 Q 472 277 479 272"/>
+    <ellipse cx="420" cy="285" rx="18" ry="24"/>
+    <ellipse cx="420" cy="285" rx="13" ry="19" class="fill-teal"/>
+    <circle cx="415" cy="280" r="2"/>
+    <circle cx="425" cy="280" r="2"/>
+    <line x1="420" y1="309" x2="420" y2="365"/>
+    <path d="M 410 275 L 430 275" stroke-width="2"/>
   </g>
   
   <g class="doodle pink">
-    <path d="M 570 270 Q 590 250 610 270 Q 590 290 570 270 Z"/>
-    <circle cx="585" cy="265" r="3"/>
-    <circle cx="595" cy="265" r="3"/>
-    <path d="M 583 275 Q 590 280 597 275"/>
+    <circle cx="540" cy="275" r="24"/>
+    <circle cx="540" cy="275" r="19" class="fill-pink"/>
+    <line x1="530" y1="265" x2="550" y2="285"/>
+    <line x1="530" y1="285" x2="550" y2="265"/>
+    <circle cx="535" cy="270" r="3"/>
+    <circle cx="545" cy="270" r="3"/>
+    <line x1="540" y1="299" x2="540" y2="360"/>
   </g>
   
   <g class="doodle teal">
-    <circle cx="720" cy="280" r="32"/>
-    <path d="M 705 270 L 715 260 L 725 265 L 735 260"/>
-    <circle cx="710" cy="275" r="4"/>
-    <circle cx="730" cy="275" r="4"/>
-    <path d="M 710 288 Q 720 295 730 288"/>
+    <circle cx="660" cy="290" r="25"/>
+    <circle cx="660" cy="290" r="20" class="fill-teal"/>
+    <path d="M 645 280 Q 660 275 675 280"/>
+    <path d="M 645 290 Q 660 285 675 290"/>
+    <path d="M 645 300 Q 660 305 675 300"/>
+    <line x1="660" y1="315" x2="660" y2="370"/>
   </g>
   
   <g class="doodle pink">
-    <ellipse cx="850" cy="290" rx="28" ry="38" transform="rotate(-10 850 290)"/>
-    <circle cx="845" cy="285" r="3"/>
-    <circle cx="855" cy="285" r="3"/>
-    <path d="M 843 295 Q 850 300 857 295"/>
-    <ellipse cx="850" cy="275" rx="18" ry="22" transform="rotate(-10 850 275)"/>
+    <ellipse cx="780" cy="280" rx="22" ry="26"/>
+    <ellipse cx="780" cy="280" rx="17" ry="21" class="fill-pink"/>
+    <circle cx="775" cy="275" r="3"/>
+    <circle cx="785" cy="275" r="3"/>
+    <path d="M 773 285 Q 780 290 787 285"/>
+    <line x1="780" y1="306" x2="780" y2="365"/>
   </g>
   
   <g class="doodle teal">
-    <path d="M 950 250 L 970 230 L 990 250 L 980 285 L 960 285 Z"/>
-    <circle cx="970" cy="255" r="4"/>
-    <circle cx="965" cy="265" r="3"/>
-    <circle cx="975" cy="265" r="3"/>
-    <path d="M 963 273 Q 970 278 977 273"/>
+    <circle cx="900" cy="285" r="23"/>
+    <circle cx="900" cy="285" r="18" class="fill-teal"/>
+    <path d="M 885 275 L 915 295"/>
+    <path d="M 885 295 L 915 275"/>
+    <circle cx="895" cy="280" r="2"/>
+    <circle cx="905" cy="280" r="2"/>
+    <line x1="900" y1="308" x2="900" y2="360"/>
   </g>
   
   <g class="doodle pink">
-    <circle cx="1100" cy="270" r="30"/>
-    <circle cx="1095" cy="265" r="4"/>
-    <circle cx="1105" cy="265" r="4"/>
-    <path d="M 1093 278 Q 1100 285 1107 278"/>
-    <path d="M 1088 255 Q 1093 250 1098 255"/>
-    <path d="M 1102 255 Q 1107 250 1112 255"/>
+    <circle cx="1020" cy="275" r="21"/>
+    <circle cx="1020" cy="275" r="16" class="fill-pink"/>
+    <path d="M 1010 270 Q 1020 265 1030 270"/>
+    <path d="M 1010 280 Q 1020 285 1030 280"/>
+    <circle cx="1015" cy="270" r="3"/>
+    <circle cx="1025" cy="270" r="3"/>
+    <line x1="1020" y1="296" x2="1020" y2="355"/>
   </g>
   
   <g class="doodle teal">
-    <rect x="30" y="320" width="50" height="65" rx="7"/>
-    <rect x="40" y="330" width="30" height="45" rx="5"/>
-    <circle cx="50" cy="342" r="3"/>
-    <circle cx="60" cy="342" r="3"/>
-    <path d="M 48 352 Q 55 357 62 352"/>
+    <circle cx="1130" cy="290" r="24"/>
+    <circle cx="1130" cy="290" r="19" class="fill-teal"/>
+    <line x1="1120" y1="280" x2="1140" y2="300"/>
+    <line x1="1120" y1="300" x2="1140" y2="280"/>
+    <path d="M 1115 290 L 1145 290" stroke-width="3"/>
+    <line x1="1130" y1="314" x2="1130" y2="370"/>
   </g>
   
   <g class="doodle pink">
-    <path d="M 150 310 Q 170 290 190 310 T 230 310"/>
-    <circle cx="160" cy="305" r="9"/>
-    <circle cx="180" cy="300" r="11"/>
-    <circle cx="200" cy="305" r="8"/>
-    <circle cx="220" cy="308" r="10"/>
+    <circle cx="50" cy="320" r="19"/>
+    <circle cx="50" cy="320" r="14" class="fill-pink"/>
+    <path d="M 40 315 Q 50 310 60 315"/>
+    <path d="M 40 325 Q 50 330 60 325"/>
+    <line x1="50" y1="339" x2="50" y2="380"/>
   </g>
   
   <g class="doodle teal">
-    <ellipse cx="320" cy="340" rx="38" ry="28"/>
-    <circle cx="310" cy="335" r="4"/>
-    <circle cx="330" cy="335" r="4"/>
-    <path d="M 312 345 Q 320 352 328 345"/>
-    <path d="M 300 330 L 310 320 L 320 325 L 330 320 L 340 330"/>
+    <ellipse cx="230" cy="330" rx="20" ry="25"/>
+    <ellipse cx="230" cy="330" rx="15" ry="20" class="fill-teal"/>
+    <circle cx="225" cy="325" r="3"/>
+    <circle cx="235" cy="325" r="3"/>
+    <path d="M 223 335 Q 230 340 237 335"/>
+    <line x1="230" y1="355" x2="230" y2="390"/>
   </g>
   
   <g class="doodle pink">
-    <path d="M 440 320 L 455 305 L 470 320 L 470 345 L 455 360 L 440 345 Z"/>
-    <circle cx="450" cy="327" r="4"/>
-    <circle cx="460" cy="327" r="4"/>
-    <path d="M 448 337 Q 455 342 462 337"/>
+    <circle cx="370" cy="325" r="22"/>
+    <circle cx="370" cy="325" r="17" class="fill-pink"/>
+    <path d="M 360 320 L 380 330"/>
+    <path d="M 360 330 L 380 320"/>
+    <circle cx="365" cy="320" r="2"/>
+    <circle cx="375" cy="320" r="2"/>
+    <line x1="370" y1="347" x2="370" y2="390"/>
   </g>
   
   <g class="doodle teal">
-    <circle cx="580" cy="340" r="34"/>
-    <circle cx="570" cy="335" r="5"/>
-    <circle cx="590" cy="335" r="5"/>
-    <path d="M 572 348 Q 580 356 588 348"/>
-    <circle cx="565" cy="325" r="3"/>
-    <circle cx="595" cy="325" r="3"/>
+    <circle cx="510" cy="335" r="25"/>
+    <circle cx="510" cy="335" r="20" class="fill-teal"/>
+    <path d="M 495 325 Q 510 320 525 325"/>
+    <path d="M 495 335 Q 510 330 525 335"/>
+    <path d="M 495 345 Q 510 350 525 345"/>
+    <line x1="510" y1="360" x2="510" y2="395"/>
   </g>
   
   <g class="doodle pink">
-    <rect x="680" y="310" width="52" height="68" rx="8"/>
-    <rect x="690" y="320" width="32" height="48" rx="5"/>
-    <circle cx="700" cy="332" r="3"/>
-    <circle cx="712" cy="332" r="3"/>
-    <path d="M 698 342 Q 706 347 714 342"/>
+    <ellipse cx="630" cy="330" rx="21" ry="24"/>
+    <ellipse cx="630" cy="330" rx="16" ry="19" class="fill-pink"/>
+    <circle cx="625" cy="325" r="3"/>
+    <circle cx="635" cy="325" r="3"/>
+    <path d="M 623 335 Q 630 340 637 335"/>
+    <line x1="630" y1="354" x2="630" y2="390"/>
   </g>
   
   <g class="doodle teal">
-    <ellipse cx="820" cy="350" rx="30" ry="40"/>
-    <circle cx="815" cy="345" r="4"/>
-    <circle cx="825" cy="345" r="4"/>
-    <path d="M 813 355 Q 820 362 827 355"/>
-    <circle cx="810" cy="335" r="3"/>
-    <circle cx="830" cy="335" r="3"/>
+    <circle cx="750" cy="340" r="23"/>
+    <circle cx="750" cy="340" r="18" class="fill-teal"/>
+    <line x1="740" y1="330" x2="760" y2="350"/>
+    <line x1="740" y1="350" x2="760" y2="330"/>
+    <circle cx="745" cy="335" r="2"/>
+    <circle cx="755" cy="335" r="2"/>
+    <line x1="750" y1="363" x2="750" y2="395"/>
   </g>
   
   <g class="doodle pink">
-    <path d="M 930 320 L 950 300 L 970 320 L 965 355 L 935 355 Z"/>
-    <circle cx="945" cy="325" r="4"/>
-    <circle cx="955" cy="325" r="4"/>
-    <path d="M 943 335 Q 950 340 957 335"/>
-    <circle cx="940" cy="315" r="3"/>
-    <circle cx="960" cy="315" r="3"/>
+    <circle cx="870" cy="330" r="20"/>
+    <circle cx="870" cy="330" r="15" class="fill-pink"/>
+    <path d="M 860 325 Q 870 320 880 325"/>
+    <path d="M 860 335 Q 870 340 880 335"/>
+    <circle cx="865" cy="325" r="3"/>
+    <circle cx="875" cy="325" r="3"/>
+    <line x1="870" y1="350" x2="870" y2="390"/>
   </g>
   
   <g class="doodle teal">
-    <circle cx="1080" cy="340" r="32"/>
-    <path d="M 1065 330 L 1075 320 L 1085 325 L 1095 320"/>
-    <circle cx="1072" cy="335" r="4"/>
-    <circle cx="1088" cy="335" r="4"/>
-    <path d="M 1072 348 Q 1080 355 1088 348"/>
+    <circle cx="990" cy="335" r="24"/>
+    <circle cx="990" cy="335" r="19" class="fill-teal"/>
+    <path d="M 975 325 Q 990 320 1005 325"/>
+    <path d="M 975 335 Q 990 330 1005 335"/>
+    <path d="M 975 345 Q 990 350 1005 345"/>
+    <line x1="990" y1="359" x2="990" y2="395"/>
   </g>
 </svg>
