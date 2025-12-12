@@ -38,7 +38,7 @@
                 <h1>My E-Portfolio</h1>
                 <p class="intro">I am a simple and motivated person who enjoys learning new things and taking on challenges. I always try to stay responsible, respectful, and positive in everything I do. I aim to grow as a person and contribute to the people around me.</p>
                 <div class="welcome-card">
-                    <p>Welcome to my page! I’m happy to have you here. This space is where I share my thoughts, experiences, and the things I enjoy. Feel free to explore, learn, and connect.</p>
+                    <p>Welcome to my page! I'm happy to have you here. This space is where I share my thoughts, experiences, and the things I enjoy. Feel free to explore, learn, and connect.</p>
                 </div>
             </div>
             <div class="content-right">
@@ -56,7 +56,7 @@
                 <h1>Christian Hope Felarca Escleto</h1>
                 <p class="intro">I am a simple and motivated person who enjoys learning new things and taking on challenges. I always try to stay responsible, respectful, and positive in everything I do. I aim to grow as a person and contribute to the people around me.</p>
                 <div class="welcome-card">
-                    <p>Welcome to my page! I’m happy to have you here. This space is where I share my thoughts, experiences, and the things I enjoy. Feel free to explore, learn, and connect.</p>
+                    <p>Welcome to my page! I'm happy to have you here. This space is where I share my thoughts, experiences, and the things I enjoy. Feel free to explore, learn, and connect.</p>
                 </div>
             </div>
             <div class="content-right">
@@ -68,55 +68,74 @@
     </script>
 
     <script id="aboutTemplate" type="text/template">
-        <div class="tiled-grid">        
-            <div class="info-card">
-                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg> Personal Info</h3>
-                <ul>
-                    <li><strong>Name:</strong> Christian Hope F. Escleto</li>
-                    <li><strong>Age:</strong> 21 years old</li>
-                    <li><strong>Birthdate:</strong> March 15, 2004</li>
-                    <li><strong>Address:</strong> Zone 2-B, Brgy, Libertad, Surallah South Cotabato</li>
-                </ul>
-            </div>
-            <div class="info-card">
-                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10v6M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg> Background</h3>
-                <p><strong>Educational background:</strong></p>
-                <ul>
-                    <li>Surallah Central Elementary School (2016-2017)</li>
-                    <li>Libetrad National Highschool (2020-2023)</li>
-                </ul>
-                <br>
-                <p><strong>Courses or trainings taken:</strong></p>
-                <ul>
-                    <li>Sultan Kudarat State University</li>
-                    <li>Bachelor of Science in Computer Engineering</li>
-                </ul>
-            </div>
-            <div class="info-card">
-                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg> Competencies</h3>
-                <ul>
-                    <li>Creativity</li>
-                    <li>Willingness to work well with others</li>
-                    <li>Ability to follow instructions</li>
-                    <li>Adaptability</li>
-                </ul>
-                <br>
-                <p><strong>Strength and Unique traits:</strong></p>
-                <ul>
-                    <li>Hardworking, Dedicated, Responsible, Reliable</li>
-                    <li>Willing to help others, Friendly and approachable</li>
-                </ul>
-            </div>
-             <div class="info-card">
-                <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg> Interests & Goals</h3>
-                 <p><strong>Hobbies:</strong></p>
-                <ul>
-                    <li>Watching movies/anime</li>
-                    <li>Playing Pickleball</li>
-                </ul>
-                <br>
-                <p><strong>Career goals:</strong></p>
-                <p>To develop strong knowledge and skills that will help me in my future profession.</p>
+        <div class="about-wrapper">
+            <div class="tiled-grid">        
+                <div class="info-card">
+                    <div class="card-left">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                        <h3>Personal Info</h3>
+                    </div>
+                    <div class="card-right">
+                        <ul>
+                            <li><strong>Name:</strong> Christian Hope F. Escleto</li>
+                            <li><strong>Age:</strong> 21 years old</li>
+                            <li><strong>Birthdate:</strong> March 15, 2004</li>
+                            <li><strong>Address:</strong> Zone 2-B, Brgy, Libertad, Surallah South Cotabato</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="card-left">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10v6M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <h3>Background</h3>
+                    </div>
+                    <div class="card-right">
+                        <p><strong>Educational background:</strong></p>
+                        <ul>
+                            <li>Surallah Central Elementary School (2016-2017)</li>
+                            <li>Libertad National Highschool (2020-2023)</li>
+                        </ul>
+                        <p><strong>Courses or trainings taken:</strong></p>
+                        <ul>
+                            <li>Sultan Kudarat State University</li>
+                            <li>Bachelor of Science in Computer Engineering</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="card-left">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                        <h3>Competencies</h3>
+                    </div>
+                    <div class="card-right">
+                        <ul>
+                            <li>Creativity</li>
+                            <li>Willingness to work well with others</li>
+                            <li>Ability to follow instructions</li>
+                            <li>Adaptability</li>
+                        </ul>
+                        <p><strong>Strength and Unique traits:</strong></p>
+                        <ul>
+                            <li>Hardworking, Dedicated, Responsible, Reliable</li>
+                            <li>Willing to help others, Friendly and approachable</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="card-left">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                        <h3>Interests & Goals</h3>
+                    </div>
+                    <div class="card-right">
+                        <p><strong>Hobbies:</strong></p>
+                        <ul>
+                            <li>Watching movies/anime</li>
+                            <li>Playing Pickleball</li>
+                        </ul>
+                        <p><strong>Career goals:</strong></p>
+                        <p>To develop strong knowledge and skills that will help me in my future profession.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </script>

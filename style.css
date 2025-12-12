@@ -372,24 +372,24 @@ body {
 	align-content: center;
 }
 
-/* TILED GRID - Vertical Rows */
+/* Wrapper for tiled-grid sections (About, Skills, Reflection) */
 .tiled-grid {
+	padding: 4rem 0;
+	/* Vertical padding only */
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-	/* Force Vertical - rows instead of columns */
 	gap: 1px;
 	background: var(--imperial-gold);
 	border: 1px solid var(--imperial-gold);
 	border-radius: 12px;
 	overflow: hidden;
-	width: 100%;
-	/* Use FULL width within padded container */
-	max-width: 100%;
-	/* Full width */
-	height: 100%;
-	/* Full height of section-content */
 	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
+
+
 
 .tiled-grid .info-card {
 	flex: 1;
@@ -398,16 +398,15 @@ body {
 	backdrop-filter: blur(10px);
 	border: none;
 	border-radius: 0;
-	padding: 2rem 3rem;
-	/* Adjusted padding for row layout */
+	padding: 1.5rem 2.5rem;
+	/* Reduced padding */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	/* Center content vertically */
 	min-height: 0;
 	/* Allow shrinking */
-	overflow-y: auto;
-	/* Allow scrolling if content is too long */
+	overflow: hidden;
+	/* No scrolling */
 }
 
 /* Specific adjustment for small screens or too many items */
@@ -428,28 +427,113 @@ body {
 
 /* Standard Info Card styling within Tiled Grid */
 .tiled-grid .info-card h3 {
-	font-size: 1.5rem;
-	/* Increased Title */
-	margin-bottom: 1.2rem;
+	font-size: 1.3rem;
+	margin-bottom: 0.8rem;
+	/* Reduced margin */
 	white-space: nowrap;
-	/* Prevent title wrap */
 	font-weight: 800;
 }
 
 .tiled-grid .info-card h3 svg {
-	width: 36px;
-	/* Increased Icons */
-	height: 36px;
+	width: 32px;
+	height: 32px;
 	stroke-width: 1.5;
+	margin-right: 0.8rem;
 }
 
 .tiled-grid .info-card ul li,
 .tiled-grid .info-card p {
-	font-size: 1.05rem;
-	/* Increased Text (was 0.85) */
-	line-height: 1.6;
+	font-size: 0.95rem;
+	/* Smaller text */
+	line-height: 1.3;
+	/* Minimal line height */
+	margin-bottom: 0.2rem;
+	/* Minimal gap */
 }
 
+
+/* About Me Wrapper */
+.about-wrapper {
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+}
+
+/* About Me: 30-70 Split Layout */
+.about-wrapper .info-card {
+flex-direction: row !important;
+align-items: center;
+padding: 0 !important;
+}
+
+.about-wrapper .info-card .card-left {
+flex: 0 0 30%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+padding: 2rem;
+border-right: 1px solid var(--imperial-gold);
+}
+
+.about-wrapper .info-card .card-left svg {
+width: 48px;
+height: 48px;
+stroke: var(--imperial-gold);
+stroke-width: 1.5;
+}
+
+.about-wrapper .info-card .card-left h3 {
+font-family: 'Cinzel', serif;
+color: var(--imperial-gold);
+font-size: 1.3rem;
+margin: 0;
+font-weight: 700;
+text-align: center;
+white-space: normal;
+}
+
+.about-wrapper .info-card .card-right {
+flex: 0 0 70%;
+padding: 1.5rem 2.5rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 0.3rem;
+}
+
+.about-wrapper .info-card .card-right p {
+color: var(--platinum);
+line-height: 1.3;
+font-size: 0.95rem;
+margin: 0;
+margin-bottom: 0.3rem;
+}
+
+.about-wrapper .info-card .card-right ul {
+list-style: none;
+padding: 0;
+margin: 0;
+margin-bottom: 0.5rem;
+}
+
+.about-wrapper .info-card .card-right li {
+color: var(--platinum);
+line-height: 1.3;
+font-size: 0.95rem;
+margin-bottom: 0.2rem;
+padding-left: 1.2rem;
+position: relative;
+}
+
+.about-wrapper .info-card .card-right li::before {
+content: '';
+color: var(--imperial-gold);
+position: absolute;
+left: 0;
+}
 /* Standard Info Card (Default) */
 .info-card {
 	background: rgba(16, 0, 43, 0.6);
