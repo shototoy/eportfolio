@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
+  <defs>
+    <style>
+      .doodle { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.4; }
+      .pink { stroke: #D53F8C; }
+      .teal { stroke: #319795; }
+    </style>
+  </defs>
+  
+  <g class="doodle pink">
+    <circle cx="80" cy="250" r="28"/>
+    <circle cx="75" cy="245" r="5"/>
+    <circle cx="85" cy="245" r="5"/>
+    <path d="M 73 258 Q 80 265 87 258"/>
+    <circle cx="70" cy="235" r="3"/>
+    <circle cx="90" cy="235" r="3"/>
+  </g>
+  
+  <g class="doodle teal">
+    <ellipse cx="200" cy="280" rx="32" ry="38"/>
+    <circle cx="195" cy="275" r="4"/>
+    <circle cx="205" cy="275" r="4"/>
+    <path d="M 193 285 Q 200 292 207 285"/>
+    <line x1="185" y1="265" x2="195" y2="265"/>
+    <line x1="205" y1="265" x2="215" y2="265"/>
+  </g>
+  
+  <g class="doodle pink">
+    <path d="M 320 260 L 340 240 L 360 260 L 350 290 L 330 290 Z"/>
+    <circle cx="340" cy="265" r="4"/>
+    <circle cx="335" cy="275" r="3"/>
+    <circle cx="345" cy="275" r="3"/>
+    <path d="M 333 282 Q 340 287 347 282"/>
+  </g>
+  
+  <g class="doodle teal">
+    <rect x="450" y="240" width="45" height="60" rx="6"/>
+    <rect x="460" y="250" width="25" height="40" rx="4"/>
+    <circle cx="467" cy="262" r="3"/>
+    <circle cx="478" cy="262" r="3"/>
+    <path d="M 465 272 Q 472 277 479 272"/>
+  </g>
+  
+  <g class="doodle pink">
+    <path d="M 570 270 Q 590 250 610 270 Q 590 290 570 270 Z"/>
+    <circle cx="585" cy="265" r="3"/>
+    <circle cx="595" cy="265" r="3"/>
+    <path d="M 583 275 Q 590 280 597 275"/>
+  </g>
+  
+  <g class="doodle teal">
+    <circle cx="720" cy="280" r="32"/>
+    <path d="M 705 270 L 715 260 L 725 265 L 735 260"/>
+    <circle cx="710" cy="275" r="4"/>
+    <circle cx="730" cy="275" r="4"/>
+    <path d="M 710 288 Q 720 295 730 288"/>
+  </g>
+  
+  <g class="doodle pink">
+    <ellipse cx="850" cy="290" rx="28" ry="38" transform="rotate(-10 850 290)"/>
+    <circle cx="845" cy="285" r="3"/>
+    <circle cx="855" cy="285" r="3"/>
+    <path d="M 843 295 Q 850 300 857 295"/>
+    <ellipse cx="850" cy="275" rx="18" ry="22" transform="rotate(-10 850 275)"/>
+  </g>
+  
+  <g class="doodle teal">
+    <path d="M 950 250 L 970 230 L 990 250 L 980 285 L 960 285 Z"/>
+    <circle cx="970" cy="255" r="4"/>
+    <circle cx="965" cy="265" r="3"/>
+    <circle cx="975" cy="265" r="3"/>
+    <path d="M 963 273 Q 970 278 977 273"/>
+  </g>
+  
+  <g class="doodle pink">
+    <circle cx="1100" cy="270" r="30"/>
+    <circle cx="1095" cy="265" r="4"/>
+    <circle cx="1105" cy="265" r="4"/>
+    <path d="M 1093 278 Q 1100 285 1107 278"/>
+    <path d="M 1088 255 Q 1093 250 1098 255"/>
+    <path d="M 1102 255 Q 1107 250 1112 255"/>
+  </g>
+  
+  <g class="doodle teal">
+    <rect x="30" y="320" width="50" height="65" rx="7"/>
+    <rect x="40" y="330" width="30" height="45" rx="5"/>
+    <circle cx="50" cy="342" r="3"/>
+    <circle cx="60" cy="342" r="3"/>
+    <path d="M 48 352 Q 55 357 62 352"/>
+  </g>
+  
+  <g class="doodle pink">
+    <path d="M 150 310 Q 170 290 190 310 T 230 310"/>
+    <circle cx="160" cy="305" r="9"/>
+    <circle cx="180" cy="300" r="11"/>
+    <circle cx="200" cy="305" r="8"/>
+    <circle cx="220" cy="308" r="10"/>
+  </g>
+  
+  <g class="doodle teal">
+    <ellipse cx="320" cy="340" rx="38" ry="28"/>
+    <circle cx="310" cy="335" r="4"/>
+    <circle cx="330" cy="335" r="4"/>
+    <path d="M 312 345 Q 320 352 328 345"/>
+    <path d="M 300 330 L 310 320 L 320 325 L 330 320 L 340 330"/>
+  </g>
+  
+  <g class="doodle pink">
+    <path d="M 440 320 L 455 305 L 470 320 L 470 345 L 455 360 L 440 345 Z"/>
+    <circle cx="450" cy="327" r="4"/>
+    <circle cx="460" cy="327" r="4"/>
+    <path d="M 448 337 Q 455 342 462 337"/>
+  </g>
+  
+  <g class="doodle teal">
+    <circle cx="580" cy="340" r="34"/>
+    <circle cx="570" cy="335" r="5"/>
+    <circle cx="590" cy="335" r="5"/>
+    <path d="M 572 348 Q 580 356 588 348"/>
+    <circle cx="565" cy="325" r="3"/>
+    <circle cx="595" cy="325" r="3"/>
+  </g>
+  
+  <g class="doodle pink">
+    <rect x="680" y="310" width="52" height="68" rx="8"/>
+    <rect x="690" y="320" width="32" height="48" rx="5"/>
+    <circle cx="700" cy="332" r="3"/>
+    <circle cx="712" cy="332" r="3"/>
+    <path d="M 698 342 Q 706 347 714 342"/>
+  </g>
+  
+  <g class="doodle teal">
+    <ellipse cx="820" cy="350" rx="30" ry="40"/>
+    <circle cx="815" cy="345" r="4"/>
+    <circle cx="825" cy="345" r="4"/>
+    <path d="M 813 355 Q 820 362 827 355"/>
+    <circle cx="810" cy="335" r="3"/>
+    <circle cx="830" cy="335" r="3"/>
+  </g>
+  
+  <g class="doodle pink">
+    <path d="M 930 320 L 950 300 L 970 320 L 965 355 L 935 355 Z"/>
+    <circle cx="945" cy="325" r="4"/>
+    <circle cx="955" cy="325" r="4"/>
+    <path d="M 943 335 Q 950 340 957 335"/>
+    <circle cx="940" cy="315" r="3"/>
+    <circle cx="960" cy="315" r="3"/>
+  </g>
+  
+  <g class="doodle teal">
+    <circle cx="1080" cy="340" r="32"/>
+    <path d="M 1065 330 L 1075 320 L 1085 325 L 1095 320"/>
+    <circle cx="1072" cy="335" r="4"/>
+    <circle cx="1088" cy="335" r="4"/>
+    <path d="M 1072 348 Q 1080 355 1088 348"/>
+  </g>
+</svg>
