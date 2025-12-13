@@ -5,6 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeland H. Daanoy | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .text-portrait {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        <?php
+        $profileImages = glob("profile*.png");
+        natsort($profileImages);
+        $profileImages = array_values($profileImages);
+        $count = count($profileImages);
+        
+        if ($count > 0) {
+            $showDuration = 4; 
+            $fadeDuration = 0.4;
+            $totalDuration = $count * $showDuration;
+
+            $fadeInPct = ($fadeDuration / $totalDuration) * 100;
+            $visiblePct = ($showDuration / $totalDuration) * 100;
+            $fadeOutPct = (($showDuration + $fadeDuration) / $totalDuration) * 100;
+
+            echo "@keyframes profileFade {
+                0% { opacity: 0; visibility: hidden; }
+                1% { opacity: 0; visibility: visible; }
+                {$fadeInPct}% { opacity: 1; visibility: visible; }
+                {$visiblePct}% { opacity: 1; visibility: visible; }
+                {$fadeOutPct}% { opacity: 0; visibility: hidden; }
+                100% { opacity: 0; visibility: hidden; }
+            }";
+        }
+        ?>
+    </style>
 </head>
 <body>
 
@@ -13,28 +46,38 @@
             <div class="content-left" id="contentLeft"></div>
             <div class="content-right">
                 <div class="text-portrait-container">
-                    <div class="text-portrait" style="background-image: url('profile.png');">
 <?php 
 $text = "MY NAME IS JELAND. ";
-$output = "";
+$content = "";
 $navWords = [
-    ['word' => 'HOME', 'section' => 'home'],
-    ['word' => 'ABOUT', 'section' => 'about'],
-    ['word' => 'SKILLS', 'section' => 'skills'],
-    ['word' => 'REFLECTION', 'section' => 'reflection']
+    ['word' => '.  HOME  .', 'section' => 'home'],
+    ['word' => '.  ABOUT  .', 'section' => 'about'],
+    ['word' => '.  SKILLS  .', 'section' => 'skills'],
+    ['word' => '.  REFLECTION  .', 'section' => 'reflection']
 ];
-$positions = [23, 63, 78, 105];
+$positions = [16, 33, 50, 76];
 $navIndex = 0;
 
-for($i = 0; $i < 150; $i++) {
-    $output .= $text;
+for($i = 0; $i < 110; $i++) {
+    $content .= $text;
     if (in_array($i, $positions) && $navIndex < count($navWords)) {
-        $output .= '<span class="nav-word" data-section="' . $navWords[$navIndex]['section'] . '">' . $navWords[$navIndex]['word'] . '</span> ';
+        $content .= '<span class="nav-word" data-section="' . $navWords[$navIndex]['section'] . '">' . $navWords[$navIndex]['word'] . '</span> ';
         $navIndex++;
     }
 }
-echo $output;
+
+if ($count > 0) {
+    foreach ($profileImages as $index => $img) {
+        $delay = $index * $showDuration;
+        $style = "background-image: url('$img'); animation: profileFade {$totalDuration}s infinite; animation-delay: {$delay}s;";
+        echo '<div class="text-portrait" style="' . $style . '">' . $content . '</div>';
+    }
+} else {
+    echo '<div class="text-portrait" style="background-image: url(\'profile.png\'); opacity: 1;">' . $content . '</div>';
+}
 ?>
+
+
                     </div>
                 </div>
             </div>
