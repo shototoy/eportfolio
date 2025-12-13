@@ -1,9 +1,7 @@
-// Get DOM elements
 const dockItems = document.querySelectorAll('.dock-item');
 const sectionContent = document.getElementById('sectionContent');
 const clipOverlay = document.getElementById('clipOverlay');
 
-// Template mapping
 const templates = {
     home: 'homeTemplate',
     about: 'aboutTemplate',
@@ -12,31 +10,24 @@ const templates = {
     reflection: 'reflectionTemplate'
 };
 
-// Slideshow variables
 let slideInterval;
 let currentSlide = 0;
 
-// Load section content
 function loadSection(sectionName) {
-    // Add clip overlay animation
     clipOverlay.classList.add('active');
 
     setTimeout(() => {
-        // Get template
         const templateId = templates[sectionName];
         const template = document.getElementById(templateId);
 
         if (template) {
-            // Inject content
             sectionContent.innerHTML = template.innerHTML;
 
-            // Initialize slideshow if projects section
             if (sectionName === 'projects') {
                 initSlideshow();
             }
         }
 
-        // Remove clip overlay
         setTimeout(() => {
             clipOverlay.classList.remove('active');
         }, 150);
@@ -44,7 +35,6 @@ function loadSection(sectionName) {
 }
 
 
-// Slideshow functionality
 function initSlideshow() {
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
@@ -53,20 +43,16 @@ function initSlideshow() {
 
     if (!slides.length) return;
 
-    // Clear any existing interval
     if (slideInterval) {
         clearInterval(slideInterval);
     }
 
-    // Reset to first slide
     currentSlide = 0;
 
-    // Auto-rotate every 2 seconds
     slideInterval = setInterval(() => {
         nextSlide();
     }, 2000);
 
-    // Next slide function
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
         indicators[currentSlide].classList.remove('active');
@@ -75,7 +61,6 @@ function initSlideshow() {
         indicators[currentSlide].classList.add('active');
     }
 
-    // Previous slide function
     function prevSlide() {
         slides[currentSlide].classList.remove('active');
         indicators[currentSlide].classList.remove('active');
@@ -84,7 +69,6 @@ function initSlideshow() {
         indicators[currentSlide].classList.add('active');
     }
 
-    // Go to specific slide
     function goToSlide(index) {
         slides[currentSlide].classList.remove('active');
         indicators[currentSlide].classList.remove('active');
@@ -93,7 +77,6 @@ function initSlideshow() {
         indicators[currentSlide].classList.add('active');
     }
 
-    // Reset interval on manual navigation
     function resetInterval() {
         clearInterval(slideInterval);
         slideInterval = setInterval(() => {
@@ -101,7 +84,6 @@ function initSlideshow() {
         }, 2000);
     }
 
-    // Button event listeners
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             nextSlide();
@@ -116,7 +98,6 @@ function initSlideshow() {
         });
     }
 
-    // Indicator event listeners
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
             goToSlide(index);
@@ -124,7 +105,6 @@ function initSlideshow() {
         });
     });
 
-    // Pause on hover
     const slideshow = document.querySelector('.activities-slideshow');
     if (slideshow) {
         slideshow.addEventListener('mouseenter', () => {
@@ -137,42 +117,32 @@ function initSlideshow() {
     }
 }
 
-// Handle dock item clicks
 dockItems.forEach(item => {
     item.addEventListener('click', () => {
-        // Remove active class from all items
         dockItems.forEach(btn => btn.classList.remove('active'));
 
-        // Add active class to clicked item
         item.classList.add('active');
 
-        // Get section name
         const section = item.getAttribute('data-section');
 
-        // Load section
         loadSection(section);
     });
 });
 
-// Load home section by default
 window.addEventListener('DOMContentLoaded', () => {
     loadSection('home');
 });
 
-// Add smooth scroll behavior
 document.documentElement.style.scrollBehavior = 'smooth';
 
-// Add parallax effect to dock on scroll
 let lastScrollTop = 0;
 window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const dock = document.querySelector('.dock-container');
 
     if (scrollTop > lastScrollTop) {
-        // Scrolling down
         dock.style.transform = 'translateY(-50%) translateX(5px)';
     } else {
-        // Scrolling up
         dock.style.transform = 'translateY(-50%) translateX(0)';
     }
 
@@ -182,7 +152,6 @@ window.addEventListener('scroll', () => {
 // Add hover effect to info cards
 
 
-// Add keyboard navigation
 document.addEventListener('keydown', (e) => {
     const sections = ['home', 'about', 'skills', 'projects', 'reflection'];
     const activeItem = document.querySelector('.dock-item.active');
@@ -202,7 +171,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Add touch swipe support for mobile
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -223,21 +191,18 @@ function handleSwipe() {
     const currentIndex = sections.indexOf(currentSection);
 
     if (touchEndX < touchStartX - swipeThreshold) {
-        // Swipe left - next section
         const nextIndex = (currentIndex + 1) % sections.length;
         const nextButton = document.querySelector(`[data-section="${sections[nextIndex]}"]`);
         if (nextButton) nextButton.click();
     }
 
     if (touchEndX > touchStartX + swipeThreshold) {
-        // Swipe right - previous section
         const prevIndex = (currentIndex - 1 + sections.length) % sections.length;
         const prevButton = document.querySelector(`[data-section="${sections[prevIndex]}"]`);
         if (prevButton) prevButton.click();
     }
 }
 
-// Add easter egg - Konami code
 let konamiCode = [];
 const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
@@ -246,7 +211,6 @@ document.addEventListener('keydown', (e) => {
     konamiCode.splice(-konamiSequence.length - 1, konamiCode.length - konamiSequence.length);
 
     if (konamiCode.join('').includes(konamiSequence.join(''))) {
-        // Easter egg activated!
         document.body.style.animation = 'rainbow 2s linear infinite';
         setTimeout(() => {
             document.body.style.animation = '';
@@ -254,7 +218,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Add CSS for rainbow animation
 const style = document.createElement('style');
 style.textContent = `
     @keyframes rainbow {

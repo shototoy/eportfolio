@@ -103,7 +103,6 @@
                             <ul>
                                 <li>Leadership in a group project</li>
                                 <li>Team collaboration and coordination</li>
-                                <li>Initiative</li>
                                 <li>Self-motivation</li>
                             </ul>
                         </div>
