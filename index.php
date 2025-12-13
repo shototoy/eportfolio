@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christian Hope Felarca Escleto | Portfolio</title>
+    <title>China Joy Aguilar Eria | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,38 +34,22 @@
     <script id="homeTemplate" type="text/template">
         <div class="split-layout">
             <div class="content-left">
-                <p class="greeting">Hi, I'm Christian!</p>
-                <h1>My E-Portfolio</h1>
-                <p class="intro">I am a simple and motivated person who enjoys learning new things and taking on challenges. I always try to stay responsible, respectful, and positive in everything I do. I aim to grow as a person and contribute to the people around me.</p>
+                <p class="greeting">Hi, I'm China Joy!</p>
+                <h1>China Joy Aguilar Eria</h1>
+                <p class="intro">I am a simple girl who sees life like a fairytale—full of small wonders, quiet magic, and everyday moments worth cherishing. I believe in dreaming big, staying kind, and creating my own story one step at a time.</p>
                 <div class="welcome-card">
-                    <p>Welcome to my page! I'm happy to have you here. This space is where I share my thoughts, experiences, and the things I enjoy. Feel free to explore, learn, and connect.</p>
+                    <p>Welcome to my page! Step into my little world where dreams, creativity, and passion meet. I'm excited to share my journey with you.</p>
                 </div>
             </div>
             <div class="content-right">
                 <div class="image-frame">
-                    <img src="profile.png" alt="Christian Hope Felarca Esclet">
+                    <img src="profile.png" alt="China Joy Aguilar Eria">
                 </div>
             </div>
         </div>
     </script>
 
-    <script id="homeTemplate" type="text/template">
-        <div class="split-layout">
-            <div class="content-left">
-                <p class="greeting">Hi, I'm Christian!</p>
-                <h1>Christian Hope Felarca Escleto</h1>
-                <p class="intro">I am a simple and motivated person who enjoys learning new things and taking on challenges. I always try to stay responsible, respectful, and positive in everything I do. I aim to grow as a person and contribute to the people around me.</p>
-                <div class="welcome-card">
-                    <p>Welcome to my page! I'm happy to have you here. This space is where I share my thoughts, experiences, and the things I enjoy. Feel free to explore, learn, and connect.</p>
-                </div>
-            </div>
-            <div class="content-right">
-                <div class="image-frame">
-                    <img src="avatar.png" alt="Christian Hope Felarca Escleto">
-                </div>
-            </div>
-        </div>
-    </script>
+
 
     <script id="aboutTemplate" type="text/template">
         <div class="about-wrapper">
@@ -77,10 +61,10 @@
                     </div>
                     <div class="card-right">
                         <ul>
-                            <li><strong>Name:</strong> Christian Hope F. Escleto</li>
-                            <li><strong>Age:</strong> 21 years old</li>
-                            <li><strong>Birthdate:</strong> March 15, 2004</li>
-                            <li><strong>Address:</strong> Zone 2-B, Brgy, Libertad, Surallah South Cotabato</li>
+                            <li><strong>Name:</strong> China Joy A. Eria</li>
+                            <li><strong>Age:</strong> 20 years old</li>
+                            <li><strong>Birthdate:</strong> February 09, 2005</li>
+                            <li><strong>Address:</strong> Prk. Maligaya, Brgy. Bukay Pait Tantangan South Cotabato</li>
                         </ul>
                     </div>
                 </div>
@@ -93,15 +77,17 @@
                         <div class="column">
                             <p><strong>Educational background:</strong></p>
                             <ul>
-                                <li>Surallah Central Elementary School (2016-2017)</li>
-                                <li>Libertad National Highschool (2020-2023)</li>
+                                <li>Bukay Pait Elementary School (2016-2017)</li>
+                                <li>Korbel Foundation College Inc. (2020-2021)</li>
+                                <li>STI College Inc. (2022-2023)</li>
                             </ul>
                         </div>
                         <div class="column">
                             <p><strong>Courses or trainings taken:</strong></p>
                             <ul>
-                                <li>Sultan Kudarat State University</li>
-                                <li>Bachelor of Science in Computer Engineering</li>
+                                <li>Circuit and Logic Design</li>
+                                <li>CpE Elective 1</li>
+                                <li>Introduction to HDL</li>
                             </ul>
                         </div>
                     </div>
@@ -113,18 +99,20 @@
                     </div>
                     <div class="card-right card-right-columns">
                         <div class="column">
+                            <p><strong>Skills and Competencies:</strong></p>
                             <ul>
-                                <li>Creativity</li>
-                                <li>Willingness to work well with others</li>
-                                <li>Ability to follow instructions</li>
+                                <li>Leadership in a group project</li>
+                                <li>Team collaboration and coordination</li>
+                                <li>Initiative</li>
+                                <li>Self-motivation</li>
                                 <li>Adaptability</li>
                             </ul>
                         </div>
                         <div class="column">
                             <p><strong>Strength and Unique traits:</strong></p>
                             <ul>
-                                <li>Hardworking, Dedicated, Responsible, Reliable</li>
-                                <li>Willing to help others, Friendly and approachable</li>
+                                <li>Time management, Adaptability, Teamwork, Creativity</li>
+                                <li>Hardworking, Patient, Responsible, Curious and Goal-driven</li>
                             </ul>
                         </div>
                     </div>
@@ -138,13 +126,13 @@
                         <div class="column">
                             <p><strong>Hobbies:</strong></p>
                             <ul>
-                                <li>Watching movies/anime</li>
-                                <li>Playing Pickleball</li>
+                                <li>Dancing</li>
+                                <li>Playing Volleyball</li>
                             </ul>
                         </div>
                         <div class="column">
                             <p><strong>Career goals:</strong></p>
-                            <p>To develop strong knowledge and skills that will help me in my future profession.</p>
+                            <p>To work in a reputable company where I can apply and grow my knowledge.</p>
                         </div>
                     </div>
                 </div>
@@ -161,7 +149,7 @@
                 </div>
                 <div class="card-right">
                     <p>HTML & CSS</p>
-                    <p>Building responsive and structured web pages.</p>
+                    <p>Building responsive and structured web pages with modern design principles.</p>
                 </div>
             </div>
             <div class="info-card">
@@ -170,8 +158,8 @@
                     <h3>Attitude</h3>
                 </div>
                 <div class="card-right">
-                    <p>Positive attitude and motivation to learn.</p>
-                    <p>Always ready to take on new challenges.</p>
+                    <p>Adaptability and willingness to learn new technologies.</p>
+                    <p>Initiative and self-motivation in every project.</p>
                 </div>
             </div>
             <div class="info-card">
@@ -201,7 +189,7 @@
                     <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">01.</span>Learnings</h3>
                 </div>
                 <div class="card-right">
-                    <p>This course helped me gain both knowledge and practical skills in technology and problem-solving. I learned how to work on projects, think critically, and collaborate effectively with others. It also taught me the value of continuous learning and adapting to new challenges.</p>
+                    <p>I learned that this course I've taken is very hard, that even though my best is not enough to pass sometimes. I also learned that failure is not the end but it is a part of the beginning. I am here not just to take this course but I am here to pursue my dreams.</p>
                 </div>
             </div>
             <div class="info-card">
@@ -210,7 +198,7 @@
                     <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">02.</span>Challenges</h3>
                 </div>
                 <div class="card-right">
-                    <p>The challenges I faced, such as understanding new concepts, learning different tools, and managing my time for projects and assignments. Working with others and applying what I learned was sometimes difficult. Still, these challenges helped me grow, stay motivated, and improve my skills.</p>
+                    <p>I think the challenges I already been faced is the moment I cannot accept the fact that sometimes in our life we fail and get disappointed, but we didn't notice that this is a step to a better life and to a better future.</p>
                 </div>
             </div>
             <div class="info-card">
@@ -219,7 +207,7 @@
                     <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">03.</span>Future</h3>
                 </div>
                 <div class="card-right">
-                    <p>Learning a scripting language can help me in my future work by allowing me to automate tasks and solve problems more efficiently. It also improves my technical skills and makes me more prepared for careers in programming, data analysis, web development, and other technology-related fields.</p>
+                    <p>Learning scripting languages can greatly help my future professional work because they allow me to automate repetitive tasks, develop software and web applications faster, and solve problems efficiently. They also enhance my ability to work with data, create interactive programs, and adapt to different technologies—skills that are highly valued in the tech industry.</p>
                 </div>
             </div>
         </div>
