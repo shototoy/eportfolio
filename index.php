@@ -176,8 +176,41 @@
     </script>
 
     <script id="projectsTemplate" type="text/template">
-        <div class="activities-fullscreen" style="background-image: url('activity1.png');">
-            <h1>INTRAMURALS</h1>
+        <div class="activities-slideshow">
+            <div class="slide active" style="background-image: url('activity1.png');">
+                <div class="slide-overlay"></div>
+                <h1>INTRAMURALS</h1>
+            </div>
+            <div class="slide" style="background-image: url('activity2.png');">
+                <div class="slide-overlay"></div>
+                <h1>INTRAMURALS</h1>
+            </div>
+            <div class="slide" style="background-image: url('activity3.png');">
+                <div class="slide-overlay"></div>
+                <h1>ACQUAINTANCE PARTY</h1>
+            </div>
+            <div class="slide" style="background-image: url('activity4.png');">
+                <div class="slide-overlay"></div>
+                <h1>ACQUAINTANCE PARTY</h1>
+            </div>
+            <div class="slide" style="background-image: url('activity5.png');">
+                <div class="slide-overlay"></div>
+                <h1>ICpEP CONVENTION 2024</h1>
+            </div>
+            <div class="slide" style="background-image: url('activity6.png');">
+                <div class="slide-overlay"></div>
+                <h1>ICpEP CONVENTION 2024</h1>
+            </div>
+            <div class="slide-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+                <span class="indicator" data-slide="4"></span>
+                <span class="indicator" data-slide="5"></span>
+            </div>
+            <button class="slide-nav prev">‹</button>
+            <button class="slide-nav next">›</button>
         </div>
     </script>
     
