@@ -12,6 +12,10 @@ const templates = {
     reflection: 'reflectionTemplate'
 };
 
+// Slideshow variables
+let slideInterval;
+let currentSlide = 0;
+
 // Load section content
 function loadSection(sectionName) {
     // Add clip overlay animation
@@ -25,6 +29,11 @@ function loadSection(sectionName) {
         if (template) {
             // Inject content
             sectionContent.innerHTML = template.innerHTML;
+
+            // Initialize slideshow if projects section
+            if (sectionName === 'projects') {
+                initSlideshow();
+            }
         }
 
         // Remove clip overlay
@@ -32,6 +41,99 @@ function loadSection(sectionName) {
             clipOverlay.classList.remove('active');
         }, 150);
     }, 150);
+}
+
+// Slideshow functionality
+function initSlideshow() {
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.querySelector('.slide-nav.prev');
+    const nextBtn = document.querySelector('.slide-nav.next');
+
+    if (!slides.length) return;
+
+    // Clear any existing interval
+    if (slideInterval) {
+        clearInterval(slideInterval);
+    }
+
+    // Reset to first slide
+    currentSlide = 0;
+
+    // Auto-rotate every 2 seconds
+    slideInterval = setInterval(() => {
+        nextSlide();
+    }, 2000);
+
+    // Next slide function
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    // Previous slide function
+    function prevSlide() {
+        slides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    // Go to specific slide
+    function goToSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    // Reset interval on manual navigation
+    function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(() => {
+            nextSlide();
+        }, 2000);
+    }
+
+    // Button event listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+        });
+    }
+
+    // Indicator event listeners
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            goToSlide(index);
+            resetInterval();
+        });
+    });
+
+    // Pause on hover
+    const slideshow = document.querySelector('.activities-slideshow');
+    if (slideshow) {
+        slideshow.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        slideshow.addEventListener('mouseleave', () => {
+            resetInterval();
+        });
+    }
 }
 
 // Handle dock item clicks
