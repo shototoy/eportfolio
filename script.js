@@ -43,6 +43,7 @@ function loadSection(sectionName) {
     }, 150);
 }
 
+
 // Slideshow functionality
 function initSlideshow() {
     const slides = document.querySelectorAll('.slide');
@@ -179,21 +180,7 @@ window.addEventListener('scroll', () => {
 }, false);
 
 // Add hover effect to info cards
-document.addEventListener('DOMContentLoaded', () => {
-    // Observe for dynamically added cards
-    const observer = new MutationObserver(() => {
-        const cards = document.querySelectorAll('.info-card');
-        cards.forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
-            card.style.animation = 'fadeIn 0.6s ease-out forwards';
-        });
-    });
 
-    observer.observe(sectionContent, {
-        childList: true,
-        subtree: true
-    });
-});
 
 // Add keyboard navigation
 document.addEventListener('keydown', (e) => {
