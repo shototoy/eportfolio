@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const clipOverlay = document.getElementById('clipOverlay');
     const welcomeOverlay = document.getElementById('welcomeOverlay');
 
-    // Welcome Overlay dismissal
     setTimeout(() => {
         if (welcomeOverlay) welcomeOverlay.classList.add('hidden');
-    }, 3500); // Show text for 3.5s then fade out
+        setTimeout(() => {
+            const homeShard = document.querySelector('.nav-shard[data-section="home"]');
+            if (homeShard) homeShard.click();
+        }, 800);
+    }, 3500);
 
     if (welcomeOverlay) {
         welcomeOverlay.addEventListener('click', () => {

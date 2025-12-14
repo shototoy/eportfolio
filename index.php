@@ -191,7 +191,6 @@
                 <span class="indicator active" data-slide="0"></span>
                 <span class="indicator" data-slide="1"></span>
                 <span class="indicator" data-slide="2"></span>
-                <span class="indicator" data-slide="3"></span>
             </div>
             <button class="slide-nav prev">‹</button>
             <button class="slide-nav next">›</button>
