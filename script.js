@@ -9,11 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         if (welcomeOverlay) welcomeOverlay.classList.add('hidden');
 
-        // Show Nav after overlay disappears (approx 1s delay)
         setTimeout(() => {
             if (navSpine) navSpine.classList.add('visible');
 
-            // Auto click home slightly after nav appears
             setTimeout(() => {
                 const homeItem = document.querySelector('.spine-item[data-section="home"]');
                 if (homeItem) homeItem.click();
@@ -77,58 +75,30 @@ document.addEventListener('DOMContentLoaded', () => {
         content.innerHTML = template.innerHTML;
         content.className = 'section-content';
 
-
+        if (sectionName === 'gallery') {
+            initGallerySelector();
+        }
     }
 
-    function initSlideshow() {
-        const slides = document.querySelectorAll('.slide');
-        const indicators = document.querySelectorAll('.indicator');
-        const prevBtn = document.querySelector('.slide-nav.prev');
-        const nextBtn = document.querySelector('.slide-nav.next');
+    function initGallerySelector() {
+        const buttons = document.querySelectorAll('.gallery-item-btn');
+        const displayImg = document.getElementById('galleryDisplayImg');
 
-        if (slides.length === 0) return;
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-        currentSlide = 0;
-        updateSlides(slides, indicators);
+                const newSrc = btn.getAttribute('data-img');
+                displayImg.style.opacity = '0';
 
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                updateSlides(slides, indicators);
+                setTimeout(() => {
+                    displayImg.src = newSrc;
+                    displayImg.style.opacity = '1';
+                }, 300);
             });
-        }
-
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                updateSlides(slides, indicators);
-            });
-        }
-
-        indicators.forEach(ind => {
-            ind.addEventListener('click', () => {
-                const index = parseInt(ind.getAttribute('data-slide'));
-                currentSlide = index;
-                updateSlides(slides, indicators);
-            });
-        });
-    }
-
-    function updateSlides(slides, indicators) {
-        slides.forEach((slide, index) => {
-            if (index === currentSlide) {
-                slide.classList.add('active');
-            } else {
-                slide.classList.remove('active');
-            }
-        });
-
-        indicators.forEach((ind, index) => {
-            if (index === currentSlide) {
-                ind.classList.add('active');
-            } else {
-                ind.classList.remove('active');
-            }
         });
     }
 });
+
+

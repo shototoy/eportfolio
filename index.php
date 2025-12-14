@@ -10,10 +10,9 @@
     <div class="bg-svg-layer"></div>
     
     <div id="welcomeOverlay">
-        <h1 class="welcome-text">WELCOME TO MY EPORTFOLIO</h1>
+        <h1 class="welcome-text">WELCOME</h1>
     </div>
 
-    <!-- New Innovative Navbar: Diamond Spine -->
     <nav class="nav-spine">
         <button class="spine-item" data-section="home" aria-label="Home">
             <div class="spine-shape"></div>
@@ -72,7 +71,7 @@
     <script id="profileTemplate" type="text/template">
         <div class="profile-specs-layout">
             <div class="specs-header">
-                <h1>IDENTITY_LOG</h1>
+                <h1>Profile</h1>
                 <div class="specs-line"></div>
             </div>
             
@@ -124,7 +123,7 @@
                 <h1 class="bio-title">MY STORY</h1>
                 
                 <p>
-                    <img src="activity1.png" class="float-img left" alt="Childhood">
+                    <img src="pic1.png" class="float-img left" alt="Childhood">
                     My name is <strong>Greshl Angelene D. Permosil</strong>, and I was born on August 02, 2005, in Isulan, Sultan Kudarat. My father is Gregorio M. Permosil, and my mother is Sharlene Mae Permosil. I have two siblings, Georgiash Glory and Elora Therese. Growing up in a small, close-knit family taught me to value what I have and to be thankful for even the small blessings. We believed in working hard, having faith, and being kind. As a child, I enjoyed simple things—playing outside with friends and helping my parents at home.
                 </p>
                 
@@ -133,7 +132,7 @@
                 </p>
 
                 <p>
-                    <img src="activity4.png" class="float-img right" alt="School Life">
+                    <img src="pic4.png" class="float-img right" alt="School Life">
                     During my school years, I discovered both challenges and opportunities. I was not always at the top of the class, but I learned to persevere and give my best in everything I did. I pushed myself to improve in areas I found difficult. Along the way, I built friendships that gave me support and laughter, and I faced struggles that made me stronger and more determined to reach my goals.
                 </p>
                 
@@ -142,7 +141,7 @@
                 </p>
 
                 <p>
-                    <img src="activity2.png" class="float-img left" alt="Future">
+                    <img src="pic7.png" class="float-img left" alt="Future">
                     But every experience has helped me understand who I am and who I want to be. I dream of having a successful career, helping my family, and inspiring others with my story. My life is still moving forward, carrying lessons of the past, hope for today, and determination for a brighter future.
                 </p>
             </article>
@@ -150,33 +149,36 @@
     </script>
 
     <script id="galleryTemplate" type="text/template">
-        <div class="gallery-masonry">
-            <div class="gallery-header">
-                <h1>SNAPSHOTS</h1>
-                <p>A collection of moments & projects</p>
+        <div class="gallery-split-layout">
+            <div class="gallery-list">
+                <h2>Collections</h2>
+                <button class="gallery-item-btn active" data-img="pic1.png">
+                    <span>01</span> Pic 1
+                </button>
+                <button class="gallery-item-btn" data-img="pic2.png">
+                    <span>02</span> Pic 2
+                </button>
+                <button class="gallery-item-btn" data-img="pic3.png">
+                    <span>03</span> Pic 3
+                </button>
+                <button class="gallery-item-btn" data-img="pic4.png">
+                    <span>04</span> Pic 4
+                </button>
+                <button class="gallery-item-btn" data-img="pic5.png">
+                    <span>05</span> Pic 5
+                </button>
+                <button class="gallery-item-btn" data-img="pic6.png">
+                    <span>06</span> Pic 6
+                </button>
+                <button class="gallery-item-btn" data-img="pic7.png">
+                    <span>07</span> Pic 7
+                </button>
+                <button class="gallery-item-btn" data-img="profile.png">
+                    <span>08</span> Profile Portrait
+                </button>
             </div>
-            <div class="masonry-grid">
-                <div class="masonry-item">
-                    <img src="activity1.png" alt="Intramurals">
-                    <div class="item-overlay"><span>Intramurals</span></div>
-                </div>
-                <div class="masonry-item">
-                    <img src="activity2.png" alt="Kambuniyan">
-                    <div class="item-overlay"><span>Kambuniyan</span></div>
-                </div>
-                <div class="masonry-item">
-                    <img src="activity3.png" alt="Calendar App">
-                    <div class="item-overlay"><span>Calendar App</span></div>
-                </div>
-                <div class="masonry-item">
-                    <img src="activity4.png" alt="Pricing Card">
-                    <div class="item-overlay"><span>Pricing Card</span></div>
-                </div>
-                <!-- Reusing images for filling the grid as requested 'all pics' -->
-                 <div class="masonry-item">
-                    <img src="profile.png" alt="Profile Shot">
-                    <div class="item-overlay"><span>Portrait</span></div>
-                </div>
+            <div class="gallery-display">
+                <img id="galleryDisplayImg" src="pic1.png" alt="Selected Image">
             </div>
         </div>
     </script>
