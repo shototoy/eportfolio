@@ -1,21 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navShards = document.querySelectorAll('.nav-shard');
+    const navItems = document.querySelectorAll('.spine-item');
     const container = document.getElementById('mainSection');
     const content = document.getElementById('sectionContent');
     const clipOverlay = document.getElementById('clipOverlay');
     const welcomeOverlay = document.getElementById('welcomeOverlay');
+    const navSpine = document.querySelector('.nav-spine');
 
     setTimeout(() => {
         if (welcomeOverlay) welcomeOverlay.classList.add('hidden');
+
+        // Show Nav after overlay disappears (approx 1s delay)
         setTimeout(() => {
-            const homeShard = document.querySelector('.nav-shard[data-section="home"]');
-            if (homeShard) homeShard.click();
-        }, 800);
+            if (navSpine) navSpine.classList.add('visible');
+
+            // Auto click home slightly after nav appears
+            setTimeout(() => {
+                const homeItem = document.querySelector('.spine-item[data-section="home"]');
+                if (homeItem) homeItem.click();
+            }, 500);
+        }, 1000);
+
     }, 3500);
 
     if (welcomeOverlay) {
         welcomeOverlay.addEventListener('click', () => {
             welcomeOverlay.classList.add('hidden');
+            setTimeout(() => {
+                if (navSpine) navSpine.classList.add('visible');
+            }, 500);
         });
     }
 
@@ -24,20 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
     container.style.clipPath = 'circle(0% at 50% 50%)';
     setTimeout(() => loadSection('home'), 100);
 
-    navShards.forEach(shard => {
-        shard.addEventListener('click', (e) => {
-            const section = shard.getAttribute('data-section');
-            handleNavigation(section, shard);
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            const section = item.getAttribute('data-section');
+            handleNavigation(section, item);
         });
     });
 
-    function handleNavigation(sectionName, activeShard) {
-        const rect = activeShard.getBoundingClientRect();
+    function handleNavigation(sectionName, activeItem) {
+        const rect = activeItem.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
 
-        navShards.forEach(s => s.classList.remove('active'));
-        if (activeShard) activeShard.classList.add('active');
+        navItems.forEach(s => s.classList.remove('active'));
+        if (activeItem) activeItem.classList.add('active');
 
         container.style.transition = 'clip-path 1s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
         container.style.clipPath = `circle(0% at ${centerX}px ${centerY}px)`;

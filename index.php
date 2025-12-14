@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stephanie Marquez Tesora | Portfolio</title>
+    <title>Greshl Angelene D. Permosil | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,23 +13,35 @@
         <h1 class="welcome-text">WELCOME TO MY EPORTFOLIO</h1>
     </div>
 
-    <nav class="nav-overlay">
-        <button class="nav-shard shard-tl" data-section="profile" aria-label="Profile">
-            <span class="shard-text">Profile</span>
-            <div class="shard-bg"></div>
+    <!-- New Innovative Navbar: Diamond Spine -->
+    <nav class="nav-spine">
+        <button class="spine-item" data-section="home" aria-label="Home">
+            <div class="spine-shape"></div>
+            <span class="spine-label">Home</span>
+            <div class="spine-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
         </button>
-        <button class="nav-shard shard-tr" data-section="about" aria-label="About">
-            <span class="shard-text">About</span>
-            <div class="shard-bg"></div>
+        <button class="spine-item" data-section="profile" aria-label="Profile">
+            <div class="spine-shape"></div>
+            <span class="spine-label">Profile</span>
+            <div class="spine-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
         </button>
-        <button class="nav-shard shard-bl" data-section="gallery" aria-label="Gallery">
-            <span class="shard-text">Gallery</span>
-            <div class="shard-bg"></div>
+        <button class="spine-item" data-section="about" aria-label="About">
+            <div class="spine-shape"></div>
+            <span class="spine-label">About</span>
+            <div class="spine-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
         </button>
-        <!-- Removed Bottom Right Shard for 4-page layout -->
-        <button class="nav-shard shard-bc" data-section="home" aria-label="Home">
-            <span class="shard-text">Home</span>
-            <div class="shard-bg"></div>
+        <button class="spine-item" data-section="gallery" aria-label="Gallery">
+            <div class="spine-shape"></div>
+            <span class="spine-label">Gallery</span>
+            <div class="spine-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
         </button>
     </nav>
 

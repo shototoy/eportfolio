@@ -108,15 +108,126 @@ body {
     }
 }
 
-.nav-overlay {
+/* --- Innovative Navbar: Diamond Spine (Vertical, Left-Centered) --- */
+.nav-spine {
     position: fixed;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 2000;
+    pointer-events: none;
+    /* Container passes click, children have pointer-events auto */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* Nav Popup Animation (Triggered by JS adding class) */
+.nav-spine.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.spine-item {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.spine-shape {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 2000;
+    width: 60px;
+    height: 60px;
+    background: var(--bg-primary);
+    border: 2px solid var(--color-blue-deep);
+    transform: rotate(45deg);
+    /* Diamond */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1;
 }
+
+.spine-icon {
+    position: relative;
+    z-index: 3;
+    color: var(--color-blue-deep);
+    transition: color 0.3s;
+}
+
+.spine-icon svg {
+    width: 24px;
+    height: 24px;
+    transform: rotate(0deg);
+    /* Icon stays straight */
+}
+
+/* Hover Effects */
+.spine-item:hover {
+    transform: scale(1.15) translateX(10px);
+}
+
+.spine-item:hover .spine-shape {
+    background: var(--color-blue-deep);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--color-blue-bright);
+}
+
+.spine-item:hover .spine-icon {
+    color: var(--color-white);
+}
+
+/* Active State */
+.spine-item.active .spine-shape {
+    background: var(--accent);
+    border-color: var(--color-orange-pale);
+    transform: rotate(225deg);
+    /* Spin effect on active */
+}
+
+.spine-item.active .spine-icon {
+    color: var(--color-text-dark);
+}
+
+/* Label (Hidden until hover) */
+.spine-label {
+    position: absolute;
+    left: 50px;
+    /* Hidden behind diamond */
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-blue-deep);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 0;
+    white-space: nowrap;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.spine-item:hover .spine-label {
+    opacity: 1;
+    left: 70px;
+    /* Slide out */
+}
+
 
 .main-section {
     position: absolute;
@@ -146,116 +257,6 @@ body {
     flex-direction: column;
     justify-content: center;
 }
-
-.nav-shard {
-    position: absolute;
-    width: var(--shard-size);
-    height: var(--shard-size);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    pointer-events: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--bg-primary);
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
-}
-
-.nav-shard:hover {
-    transform: scale(1.1);
-    z-index: 101;
-}
-
-.nav-shard .shard-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-blue-deep);
-    z-index: -1;
-    transition: background 0.3s;
-}
-
-.nav-shard:hover .shard-bg,
-.nav-shard.active .shard-bg {
-    background: var(--accent);
-}
-
-.shard-text {
-    position: relative;
-    z-index: 2;
-    pointer-events: none;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.shard-tl {
-    top: 0;
-    left: 0;
-    clip-path: polygon(0 0, 100% 0, 0 100%);
-}
-
-.shard-tl .shard-text {
-    transform: translate(-10px, -10px) rotate(-45deg);
-}
-
-.shard-tr {
-    top: 0;
-    right: 0;
-    clip-path: polygon(0 0, 100% 0, 100% 100%);
-}
-
-.shard-tr .shard-text {
-    transform: translate(10px, -10px) rotate(45deg);
-}
-
-.shard-bl {
-    bottom: 0;
-    left: 0;
-    clip-path: polygon(0 0, 0 100%, 100% 100%);
-}
-
-.shard-bl .shard-text {
-    transform: translate(-10px, 10px) rotate(45deg);
-}
-
-.shard-br {
-    bottom: 0;
-    right: 0;
-    clip-path: polygon(100% 0, 0 100%, 100% 100%);
-    display: none;
-    /* Hidden as per 4-page layout request */
-}
-
-.shard-br .shard-text {
-    transform: translate(10px, 10px) rotate(-45deg);
-}
-
-
-.shard-bc {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 220px;
-    height: 100px;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-}
-
-.shard-bc .shard-text {
-    transform: translateY(20px);
-}
-
-.shard-bc:hover {
-    transform: translateX(-50%) scale(1.1);
-}
-
 
 .split-layout {
     display: flex;
