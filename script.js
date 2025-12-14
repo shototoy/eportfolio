@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (activeShard) activeShard.classList.add('active');
 
         // 3. Close the current view (Collapse to center or previous origin? Let's collapse to new origin for speed)
-        // Transition: collapse fast
-        container.style.transition = 'clip-path 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
+        // Transition: collapse slower
+        container.style.transition = 'clip-path 1s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
         container.style.clipPath = `circle(0% at ${centerX}px ${centerY}px)`;
         container.classList.remove('active');
 
@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Prepare for expansion
             // We keep the origin at the shard, but expand to cover the whole screen (150% is safe)
-            container.style.transition = 'clip-path 0.8s cubic-bezier(0.19, 1, 0.22, 1)';
+            container.style.transition = 'clip-path 1.5s cubic-bezier(0.19, 1, 0.22, 1)';
             container.style.clipPath = `circle(150% at ${centerX}px ${centerY}px)`;
             container.classList.add('active');
 
-        }, 400); // Wait 400ms matching the transition
+        }, 1000); // Wait 1000ms matching the transition
     }
 
     function loadSection(sectionName) {
