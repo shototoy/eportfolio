@@ -3,16 +3,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('mainSection');
     const content = document.getElementById('sectionContent');
     const clipOverlay = document.getElementById('clipOverlay');
+    const welcomeOverlay = document.getElementById('welcomeOverlay');
 
-    // State
+    // Welcome Overlay dismissal
+    setTimeout(() => {
+        if (welcomeOverlay) welcomeOverlay.classList.add('hidden');
+    }, 3500); // Show text for 3.5s then fade out
+
+    if (welcomeOverlay) {
+        welcomeOverlay.addEventListener('click', () => {
+            welcomeOverlay.classList.add('hidden');
+        });
+    }
+
     let currentSlide = 0;
 
-    // Initialize
-    // converting clip-path of container for initial state
     container.style.clipPath = 'circle(0% at 50% 50%)';
-    setTimeout(() => loadSection('home'), 100); // Small delay to ensure CSS is ready
+    setTimeout(() => loadSection('home'), 100);
 
-    // Navigation Events
     navShards.forEach(shard => {
         shard.addEventListener('click', (e) => {
             const section = shard.getAttribute('data-section');
@@ -21,32 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function handleNavigation(sectionName, activeShard) {
-        // 1. Get coordinates of the clicked shard to start animation from there
         const rect = activeShard.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
 
-        // 2. Active State Logic (Highlighting)
         navShards.forEach(s => s.classList.remove('active'));
         if (activeShard) activeShard.classList.add('active');
 
-        // 3. Close the current view (Collapse to center or previous origin? Let's collapse to new origin for speed)
-        // Transition: collapse slower
         container.style.transition = 'clip-path 1s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
         container.style.clipPath = `circle(0% at ${centerX}px ${centerY}px)`;
         container.classList.remove('active');
 
-        // 4. Wait for collapse, then swap content and expand
         setTimeout(() => {
             loadSection(sectionName);
 
-            // Prepare for expansion
-            // We keep the origin at the shard, but expand to cover the whole screen (150% is safe)
             container.style.transition = 'clip-path 1.5s cubic-bezier(0.19, 1, 0.22, 1)';
             container.style.clipPath = `circle(150% at ${centerX}px ${centerY}px)`;
             container.classList.add('active');
 
-        }, 1000); // Wait 1000ms matching the transition
+        }, 1000);
     }
 
     function loadSection(sectionName) {
@@ -58,17 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Inject Content
         content.innerHTML = template.innerHTML;
-        content.className = 'section-content'; // Removed fade-in
+        content.className = 'section-content';
 
-        // Post-Load Initializations
         if (sectionName === 'projects') {
             initSlideshow();
         }
     }
 
-    // Slideshow Logic
     function initSlideshow() {
         const slides = document.querySelectorAll('.slide');
         const indicators = document.querySelectorAll('.indicator');
@@ -77,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (slides.length === 0) return;
 
-        // Reset state
         currentSlide = 0;
         updateSlides(slides, indicators);
 
@@ -95,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Indicator clicks
         indicators.forEach(ind => {
             ind.addEventListener('click', () => {
                 const index = parseInt(ind.getAttribute('data-slide'));

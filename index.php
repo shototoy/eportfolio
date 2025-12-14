@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="bg-svg-layer"></div>
+    
+    <div id="welcomeOverlay">
+        <h1 class="welcome-text">WELCOME TO MY EPORTFOLIO</h1>
+    </div>
+
     <nav class="nav-overlay">
         <button class="nav-shard shard-tl" data-section="about" aria-label="About">
             <span class="shard-text">About</span>

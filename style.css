@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    /* Color Palette - Updated to Powder Blue/Orange Scheme */
     --color-blue-deep: #0487D9;
     --color-blue-bright: #049DD9;
     --color-blue-pale: #C4EEF2;
@@ -38,11 +37,64 @@ body {
     height: 100vh;
     overflow: hidden;
     position: relative;
-    /* Subtle gradient background */
     background: radial-gradient(circle at 50% 50%, #ffffff 0%, var(--bg-primary) 100%);
 }
 
-/* --- Layout Containers --- */
+.bg-svg-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+    background-image: url('background.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+#welcomeOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-blue-deep);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease, visibility 1s;
+}
+
+#welcomeOverlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.welcome-text {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 5rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: transparent;
+    background: linear-gradient(120deg, #ffffff 0%, #ffffff 40%, var(--color-blue-pale) 50%, var(--color-orange-vibrant) 60%, #ffffff 70%, #ffffff 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shine 3s linear infinite;
+    padding: 1rem;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
 .nav-overlay {
     position: fixed;
     top: 0;
@@ -50,7 +102,6 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    /* Let clicks pass through to content, enable details on specific buttons */
     z-index: 100;
 }
 
@@ -60,37 +111,29 @@ body {
     left: 80px;
     right: 80px;
     bottom: 120px;
-    /* More space at bottom for nav */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
-    /* Animation state controlled by JS now */
     opacity: 1;
     clip-path: circle(0% at 50% 50%);
-    /* Start hidden */
 }
 
 .main-section.active {
     clip-path: circle(150% at 50% 50%);
-    /* Reveal all */
 }
 
-/* Removing fadeInMain as we use clip-path now */
 .section-content {
     width: 100%;
     max-width: 1200px;
     height: 100%;
     overflow-y: hidden;
-    /* No scroll */
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Center content vertically since we don't scroll */
 }
 
-/* --- Shard Navigation Styles --- */
 .nav-shard {
     position: absolute;
     width: var(--shard-size);
@@ -131,7 +174,6 @@ body {
 .nav-shard:hover .shard-bg,
 .nav-shard.active .shard-bg {
     background: var(--accent);
-    /* Orange on hover/active */
 }
 
 .shard-text {
@@ -141,11 +183,9 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Corner Positioning & Geometries via Clip-Path */
 .shard-tl {
     top: 0;
     left: 0;
-    /* Triangle pointing down-right */
     clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
@@ -188,11 +228,9 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    /* Diamond / Pentagon pointing up */
     width: 220px;
     height: 100px;
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    /* Or a more complex shape? Let's do a simple mountain peak */
 }
 
 .shard-bc .shard-text {
@@ -204,12 +242,6 @@ body {
 }
 
 
-/* --- Active State Highlighting --- */
-/* We can add a glow or specific border if needed, but color shift is already there */
-
-
-/* --- Content Styling --- */
-/* Home Split Layout */
 .split-layout {
     display: flex;
     height: 100%;
@@ -260,7 +292,6 @@ h1 {
     border-radius: 0 10px 10px 0;
 }
 
-/* Image Frame */
 .image-frame {
     position: relative;
     width: 400px;
@@ -277,7 +308,6 @@ h1 {
     position: relative;
 }
 
-/* Abstract blobbly decoration behind image */
 .image-frame::before {
     content: '';
     position: absolute;
@@ -305,7 +335,6 @@ h1 {
 }
 
 
-/* --- About, Skills, Reflection Grids --- */
 .tiled-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -358,7 +387,6 @@ h1 {
 .card-right ul li {
     margin-bottom: 0.5rem;
     padding-left: 1.2rem;
-    /* space for bullet */
     position: relative;
 }
 
@@ -377,7 +405,6 @@ h1 {
 }
 
 
-/* --- Projects Slideshow --- */
 .activities-slideshow {
     position: relative;
     width: 100%;
@@ -398,7 +425,6 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /* Text at bottom */
     padding-bottom: 3rem;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
@@ -477,7 +503,6 @@ h1 {
 }
 
 
-/* --- Responsive --- */
 @media (max-width: 768px) {
     .nav-shard {
         width: 80px;
@@ -487,8 +512,6 @@ h1 {
     .shard-text {
         display: none;
     }
-
-    /* Hide text on small screens, pure icons/shapes */
 
     .main-section {
         inset: 20px;
@@ -511,7 +534,6 @@ h1 {
     }
 }
 
-/* Animations Class for transitioning content */
 .fade-in {
     animation: fadeIn 0.5s ease-out forwards;
 }

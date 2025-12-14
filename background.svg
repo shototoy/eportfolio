@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <style>
+      @keyframes float1 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(50px, -50px) rotate(10deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
+      @keyframes float2 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-30px, 40px) rotate(-15deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
+      @keyframes pulse { 0% { opacity: 0.3; } 50% { opacity: 0.6; } 100% { opacity: 0.3; } }
+      .shape { transform-origin: center; opacity: 0.4; }
+      .s1 { fill: #C4EEF2; animation: float1 20s infinite ease-in-out; }
+      .s2 { fill: #049DD9; animation: float2 25s infinite ease-in-out; opacity: 0.1; }
+      .s3 { fill: #F2D6BD; animation: float1 30s infinite ease-in-out reverse; }
+      .s4 { fill: #F2AB6D; animation: float2 22s infinite ease-in-out; opacity: 0.15; }
+      .s5 { fill: #0487D9; animation: float1 28s infinite ease-in-out; opacity: 0.05; }
+    </style>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#C4EEF2" opacity="0.1"/>
+  
+  <circle cx="200" cy="200" r="150" class="shape s1" />
+  <polygon points="1700,100 1800,300 1600,250" class="shape s3" />
+  <rect x="100" y="800" width="200" height="200" rx="20" class="shape s2" />
+  <circle cx="1600" cy="900" r="100" class="shape s4" />
+  
+  <polygon points="500,500 550,600 450,550" class="shape s5" style="animation-delay: -5s" />
+  <polygon points="900,200 950,250 850,250" class="shape s3" style="animation-delay: -10s" />
+  <polygon points="1200,700 1250,800 1150,750" class="shape s4" style="animation-delay: -15s" />
+  
+  <circle cx="960" cy="540" r="400" fill="none" stroke="#F2AB6D" stroke-width="2" opacity="0.1" stroke-dasharray="20 10">
+    <animateTransform attributeName="transform" type="rotate" from="0 960 540" to="360 960 540" dur="60s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="960" cy="540" r="300" fill="none" stroke="#0487D9" stroke-width="1" opacity="0.1" stroke-dasharray="10 20">
+    <animateTransform attributeName="transform" type="rotate" from="360 960 540" to="0 960 540" dur="50s" repeatCount="indefinite"/>
+  </circle>
+</svg>
