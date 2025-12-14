@@ -14,22 +14,19 @@
     </div>
 
     <nav class="nav-overlay">
-        <button class="nav-shard shard-tl" data-section="about" aria-label="About">
+        <button class="nav-shard shard-tl" data-section="profile" aria-label="Profile">
+            <span class="shard-text">Profile</span>
+            <div class="shard-bg"></div>
+        </button>
+        <button class="nav-shard shard-tr" data-section="about" aria-label="About">
             <span class="shard-text">About</span>
             <div class="shard-bg"></div>
         </button>
-        <button class="nav-shard shard-tr" data-section="skills" aria-label="Skills">
-            <span class="shard-text">Skills</span>
+        <button class="nav-shard shard-bl" data-section="gallery" aria-label="Gallery">
+            <span class="shard-text">Gallery</span>
             <div class="shard-bg"></div>
         </button>
-        <button class="nav-shard shard-bl" data-section="projects" aria-label="Activities">
-            <span class="shard-text">Activities</span>
-            <div class="shard-bg"></div>
-        </button>
-        <button class="nav-shard shard-br" data-section="reflection" aria-label="Reflection">
-            <span class="shard-text">Reflection</span>
-            <div class="shard-bg"></div>
-        </button>
+        <!-- Removed Bottom Right Shard for 4-page layout -->
         <button class="nav-shard shard-bc" data-section="home" aria-label="Home">
             <span class="shard-text">Home</span>
             <div class="shard-bg"></div>
@@ -45,187 +42,102 @@
     <script id="homeTemplate" type="text/template">
         <div class="split-layout">
             <div class="content-left">
-                <p class="greeting">Hi, I'm Stephanie Marquez</p>
-                <h1>Stephanie Marquez Tesora</h1>
-                <p class="intro">a passionate and motivated student exploring the world of technology and web development.</p>
+                <p class="greeting">Hi, I'm Greshl Angelene</p>
+                <h1>Greshl Angelene D. Permosil</h1>
+                <p class="intro">A Computer Engineering student growing, learning, and dreaming of building a brighter future.</p>
                 <div class="welcome-card">
-                    <p>This website showcases who I am, the skills I’m building, and the projects I’ve created throughout my learning journey. Feel free to look around and get to know me better. I’m excited to share my growth, experiences, and goals with you!</p>
+                    <p>Welcome to my personal portfolio. This site shares my journey, my background, and the moments that define who I am. From my roots in Sultan Kudarat to my aspirations in technology, I invite you to get to know me better.</p>
                 </div>
             </div>
             <div class="content-right">
                 <div class="image-frame">
-                    <img src="profile.png" alt="Stephanie Marquez Tesora">
+                    <img src="profile.png" alt="Greshl Angelene Permosil">
                 </div>
             </div>
         </div>
     </script>
 
-
-
-    <script id="aboutTemplate" type="text/template">
-        <div class="about-wrapper">
-            <div class="tiled-grid">        
-                <div class="info-card">
-                    <div class="card-left">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10v6M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                        <h3>Background</h3>
-                    </div>
-                    <div class="card-right card-right-columns">
-                        <div class="column">
-                            <p><strong>Educational background:</strong></p>
-                            <ul>
-                                <li>Estrella Integrated School (2015-2016)</li>
-                                <li>Central Mangilala National High School (2020-2021)</li>
-                                <li>Central Mangilala National High School (2022-2023)</li>
-                                <li>Currently taking a BSCPE at Sultan Kudarat State University</li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <p><strong>Courses or trainings taken:</strong></p>
-                            <ul>
-                                <li>Training for CSS NC2</li>
-                                <li>Elective 1</li>
-                                <li>Electronic logic circuit</li>
-                                <li>Data Structure</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <div class="card-left">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                        <h3>Competencies</h3>
-                    </div>
-                    <div class="card-right card-right-columns">
-                        <div class="column">
-                            <p><strong>Skills and Competencies:</strong></p>
-                            <ul>
-                                <li>Computer System Servicing NC II Passer</li>
-                                <li>Knowledgeable in computer hardware, troubleshooting, installation, and maintenance</li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <p><strong>Strength and Unique traits:</strong></p>
-                            <ul>
-                                <li>Creative, hardworking, detail-oriented</li>
-                                <li>Eager to learn</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <div class="card-left">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                        <h3>Interests & Goals</h3>
-                    </div>
-                    <div class="card-right card-right-columns">
-                        <div class="column">
-                            <p><strong>Hobbies:</strong></p>
-                            <ul>
-                                <li>Exploring new technologies</li>
-                                <li>Watching tech-related videos</li>
-                                <li>Reading</li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <p><strong>Career goals:</strong></p>
-                            <p>To become a skilled web developer and eventually work in the field of software development.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </script>
-
-    <script id="skillsTemplate" type="text/template">
+    <script id="profileTemplate" type="text/template">
         <div class="tiled-grid">
             <div class="info-card">
                 <div class="card-left">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-                    <h3>Technical Skills</h3>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    <h3>The Basics</h3>
                 </div>
                 <div class="card-right">
-                    <p><strong>Web Development:</strong> HTML, CSS, basic JavaScript</p>
-                    <p><strong>Multimedia:</strong> Basic layout and photo editing</p>
-                    <p><strong>System:</strong> PC assembly, system configuration, software installation</p>
+                    <p><strong>Name:</strong> Greshl Angelene D. Permosil</p>
+                    <p><strong>Age:</strong> 20 years old</p>
+                    <p><strong>Birthdate:</strong> August 02, 2005</p>
                 </div>
             </div>
             <div class="info-card">
                 <div class="card-left">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <h3>Soft Skills</h3>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10v6M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    <h3>Current Status</h3>
                 </div>
                 <div class="card-right">
-                    <p>Good communication, teamwork, adaptability, and problem-solving.</p>
-                    <p>Detail-oriented, organized, and willing to learn new technologies.</p>
+                    <p><strong>Course:</strong> Bachelor of Science in Computer Engineering</p>
+                    <p><strong>Institution:</strong> Sultan Kudarat State University</p>
                 </div>
             </div>
             <div class="info-card">
                 <div class="card-left">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2l3 6 5-4-3 6h7l-4 5 4 5h-7l3 6-5-4-3 6V2z"></path></svg>
-                    <h3>Other</h3>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <h3>Personal Interest</h3>
                 </div>
                 <div class="card-right">
-                    <p><strong>Applications:</strong> MS Word, PowerPoint</p>
-                    <p><strong>Knowledge in Military:</strong> ROTC graduate</p>
+                    <p><strong>Likes:</strong> Playing badminton and shopping.</p>
+                    <p><strong>Dislikes:</strong> Socializing is not always my hobby; I value my quiet time.</p>
+                    <p><strong>Greatest Achievement:</strong> Vacationing in my dad's hometown.</p>
                 </div>
             </div>
         </div>
     </script>
 
-    <script id="projectsTemplate" type="text/template">
+    <script id="aboutTemplate" type="text/template">
+        <div class="about-wrapper" style="overflow-y: auto; max-height: 80vh; padding-right: 1rem;">
+            <div class="info-card" style="width: 100%;">
+                <div class="card-left" style="margin-bottom: 2rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <h3>My Autobiography</h3>
+                </div>
+                <div class="card-right" style="line-height: 1.8; font-size: 1.1rem; color: var(--color-text-dark);">
+                    <p style="margin-bottom: 1.5rem;">My name is <strong>Greshl Angelene D. Permosil</strong>, and I was born on August 02, 2005, in Isulan, Sultan Kudarat. My father is Gregorio M. Permosil, and my mother is Sharlene Mae Permosil. I have two siblings, Georgiash Glory and Elora Therese. Growing up in a small, close-knit family taught me to value what I have and to be thankful for even the small blessings. We believed in working hard, having faith, and being kind. As a child, I enjoyed simple things—playing outside with friends and helping my parents at home.</p>
+                    
+                    <p style="margin-bottom: 1.5rem;">I began my education at Kalawag Central School for elementary and continued my high school studies at Notre Dame of Isulan, Inc. (Ultimart Day-Class), passing with flying colors. I went on to pursue my senior high school years at the same institution. During my school years, I discovered both challenges and opportunities. I was not always at the top of the class, but I learned to persevere and give my best in everything I did. I pushed myself to improve in areas I found difficult. Along the way, I built friendships that gave me support and laughter, and I faced struggles that made me stronger and more determined to reach my goals.</p>
+                    
+                    <p>Today, I see myself as someone who keeps growing and learning every day. My journey is not yet finished. As I currently study at Sultan Kudarat State University, pursuing a BS in Computer Engineering, I know the road will not always be easy. But every experience has helped me understand who I am and who I want to be. I dream of having a successful career, helping my family, and inspiring others with my story. My life is still moving forward, carrying lessons of the past, hope for today, and determination for a brighter future.</p>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="galleryTemplate" type="text/template">
         <div class="activities-slideshow">
             <div class="slide active" style="background-image: url('activity1.png');">
                 <div class="slide-overlay"></div>
-                <h1>INTRAMURALS</h1>
+                <h1>MY JOURNEY</h1>
             </div>
             <div class="slide" style="background-image: url('activity2.png');">
                 <div class="slide-overlay"></div>
-                <h1>KAMBUNIYAN</h1>
+                <h1>MEMORIES</h1>
             </div>
             <div class="slide" style="background-image: url('activity3.png');">
                 <div class="slide-overlay"></div>
-                <h1>CALENDAR APP</h1>
+                <h1>ACHIEVEMENTS</h1>
+            </div>
+            <div class="slide" style="background-image: url('activity4.png');">
+                <div class="slide-overlay"></div>
+                <h1>FAMILY</h1>
             </div>
             <div class="slide-indicators">
                 <span class="indicator active" data-slide="0"></span>
                 <span class="indicator" data-slide="1"></span>
                 <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
             </div>
             <button class="slide-nav prev">‹</button>
             <button class="slide-nav next">›</button>
-        </div>
-    </script>
-    
-    <script id="reflectionTemplate" type="text/template">
-        <div class="tiled-grid">
-            <div class="info-card">
-                <div class="card-left">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">01.</span>Learnings</h3>
-                </div>
-                <div class="card-right">
-                    <p>Throughout this course, I learned how web pages are created and how important scripting languages are in making websites interactive and functional. I also discovered the importance of proper structure, design, and user experience.</p>
-                </div>
-            </div>
-            <div class="info-card">
-                <div class="card-left">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-                    <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">02.</span>Challenges</h3>
-                </div>
-                <div class="card-right">
-                    <p>Some challenges I faced included debugging errors and learning how to organize my code, but these experiences helped me improve my patience and problem-solving skills.</p>
-                </div>
-            </div>
-            <div class="info-card">
-                <div class="card-left">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
-                    <h3><span style="color:var(--imperial-gold); margin-right: 0.5rem;">03.</span>Future</h3>
-                </div>
-                <div class="card-right">
-                    <p>Overall, I realized that learning programming can open many opportunities in my future career and make me more confident in pursuing the field of web development.</p>
-                </div>
-            </div>
         </div>
     </script>
 

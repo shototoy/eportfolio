@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         content.innerHTML = template.innerHTML;
         content.className = 'section-content';
 
-        if (sectionName === 'projects') {
+        if (sectionName === 'gallery') {
             initSlideshow();
         }
     }

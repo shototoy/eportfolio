@@ -230,6 +230,8 @@ body {
     bottom: 0;
     right: 0;
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    display: none;
+    /* Hidden as per 4-page layout request */
 }
 
 .shard-br .shard-text {
