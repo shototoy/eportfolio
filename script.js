@@ -1,228 +1,125 @@
-const dockItems = document.querySelectorAll('.dock-item');
-const sectionContent = document.getElementById('sectionContent');
-const clipOverlay = document.getElementById('clipOverlay');
+document.addEventListener('DOMContentLoaded', () => {
+    const navShards = document.querySelectorAll('.nav-shard');
+    const container = document.getElementById('mainSection');
+    const content = document.getElementById('sectionContent');
+    const clipOverlay = document.getElementById('clipOverlay');
 
-const templates = {
-    home: 'homeTemplate',
-    about: 'aboutTemplate',
-    skills: 'skillsTemplate',
-    projects: 'projectsTemplate',
-    reflection: 'reflectionTemplate'
-};
+    // State
+    let currentSlide = 0;
 
-let slideInterval;
-let currentSlide = 0;
+    // Initialize
+    // converting clip-path of container for initial state
+    container.style.clipPath = 'circle(0% at 50% 50%)';
+    setTimeout(() => loadSection('home'), 100); // Small delay to ensure CSS is ready
 
-function loadSection(sectionName) {
-    clipOverlay.classList.add('active');
+    // Navigation Events
+    navShards.forEach(shard => {
+        shard.addEventListener('click', (e) => {
+            const section = shard.getAttribute('data-section');
+            handleNavigation(section, shard);
+        });
+    });
 
-    setTimeout(() => {
-        const templateId = templates[sectionName];
+    function handleNavigation(sectionName, activeShard) {
+        // 1. Get coordinates of the clicked shard to start animation from there
+        const rect = activeShard.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        // 2. Active State Logic (Highlighting)
+        navShards.forEach(s => s.classList.remove('active'));
+        if (activeShard) activeShard.classList.add('active');
+
+        // 3. Close the current view (Collapse to center or previous origin? Let's collapse to new origin for speed)
+        // Transition: collapse fast
+        container.style.transition = 'clip-path 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
+        container.style.clipPath = `circle(0% at ${centerX}px ${centerY}px)`;
+        container.classList.remove('active');
+
+        // 4. Wait for collapse, then swap content and expand
+        setTimeout(() => {
+            loadSection(sectionName);
+
+            // Prepare for expansion
+            // We keep the origin at the shard, but expand to cover the whole screen (150% is safe)
+            container.style.transition = 'clip-path 0.8s cubic-bezier(0.19, 1, 0.22, 1)';
+            container.style.clipPath = `circle(150% at ${centerX}px ${centerY}px)`;
+            container.classList.add('active');
+
+        }, 400); // Wait 400ms matching the transition
+    }
+
+    function loadSection(sectionName) {
+        const templateId = sectionName + 'Template';
         const template = document.getElementById(templateId);
 
-        if (template) {
-            sectionContent.innerHTML = template.innerHTML;
-
-            if (sectionName === 'projects') {
-                initSlideshow();
-            }
+        if (!template) {
+            content.innerHTML = '<p>Section not found.</p>';
+            return;
         }
 
-        setTimeout(() => {
-            clipOverlay.classList.remove('active');
-        }, 150);
-    }, 150);
-}
+        // Inject Content
+        content.innerHTML = template.innerHTML;
+        content.className = 'section-content'; // Removed fade-in
 
-
-function initSlideshow() {
-    const slides = document.querySelectorAll('.slide');
-    const indicators = document.querySelectorAll('.indicator');
-    const prevBtn = document.querySelector('.slide-nav.prev');
-    const nextBtn = document.querySelector('.slide-nav.next');
-
-    if (!slides.length) return;
-
-    if (slideInterval) {
-        clearInterval(slideInterval);
+        // Post-Load Initializations
+        if (sectionName === 'projects') {
+            initSlideshow();
+        }
     }
 
-    currentSlide = 0;
+    // Slideshow Logic
+    function initSlideshow() {
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.slide-nav.prev');
+        const nextBtn = document.querySelector('.slide-nav.next');
 
-    slideInterval = setInterval(() => {
-        nextSlide();
-    }, 2000);
+        if (slides.length === 0) return;
 
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        indicators[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
-    }
+        // Reset state
+        currentSlide = 0;
+        updateSlides(slides, indicators);
 
-    function prevSlide() {
-        slides[currentSlide].classList.remove('active');
-        indicators[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
-    }
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateSlides(slides, indicators);
+            });
+        }
 
-    function goToSlide(index) {
-        slides[currentSlide].classList.remove('active');
-        indicators[currentSlide].classList.remove('active');
-        currentSlide = index;
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
-    }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlides(slides, indicators);
+            });
+        }
 
-    function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(() => {
-            nextSlide();
-        }, 2000);
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            resetInterval();
+        // Indicator clicks
+        indicators.forEach(ind => {
+            ind.addEventListener('click', () => {
+                const index = parseInt(ind.getAttribute('data-slide'));
+                currentSlide = index;
+                updateSlides(slides, indicators);
+            });
         });
     }
 
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            resetInterval();
-        });
-    }
-
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            goToSlide(index);
-            resetInterval();
-        });
-    });
-
-    const slideshow = document.querySelector('.activities-slideshow');
-    if (slideshow) {
-        slideshow.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
+    function updateSlides(slides, indicators) {
+        slides.forEach((slide, index) => {
+            if (index === currentSlide) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
         });
 
-        slideshow.addEventListener('mouseleave', () => {
-            resetInterval();
+        indicators.forEach((ind, index) => {
+            if (index === currentSlide) {
+                ind.classList.add('active');
+            } else {
+                ind.classList.remove('active');
+            }
         });
-    }
-}
-
-dockItems.forEach(item => {
-    item.addEventListener('click', () => {
-        dockItems.forEach(btn => btn.classList.remove('active'));
-
-        item.classList.add('active');
-
-        const section = item.getAttribute('data-section');
-
-        loadSection(section);
-    });
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-    loadSection('home');
-});
-
-document.documentElement.style.scrollBehavior = 'smooth';
-
-let lastScrollTop = 0;
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const dock = document.querySelector('.dock-container');
-
-    if (scrollTop > lastScrollTop) {
-        dock.style.transform = 'translateY(-50%) translateX(5px)';
-    } else {
-        dock.style.transform = 'translateY(-50%) translateX(0)';
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-}, false);
-
-// Add hover effect to info cards
-
-
-document.addEventListener('keydown', (e) => {
-    const sections = ['home', 'about', 'skills', 'projects', 'reflection'];
-    const activeItem = document.querySelector('.dock-item.active');
-    const currentSection = activeItem ? activeItem.getAttribute('data-section') : 'home';
-    const currentIndex = sections.indexOf(currentSection);
-
-    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-        e.preventDefault();
-        const nextIndex = (currentIndex + 1) % sections.length;
-        const nextButton = document.querySelector(`[data-section="${sections[nextIndex]}"]`);
-        if (nextButton) nextButton.click();
-    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-        e.preventDefault();
-        const prevIndex = (currentIndex - 1 + sections.length) % sections.length;
-        const prevButton = document.querySelector(`[data-section="${sections[prevIndex]}"]`);
-        if (prevButton) prevButton.click();
     }
 });
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-}, false);
-
-document.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-}, false);
-
-function handleSwipe() {
-    const swipeThreshold = 50;
-    const sections = ['home', 'about', 'skills', 'projects', 'reflection'];
-    const activeItem = document.querySelector('.dock-item.active');
-    const currentSection = activeItem ? activeItem.getAttribute('data-section') : 'home';
-    const currentIndex = sections.indexOf(currentSection);
-
-    if (touchEndX < touchStartX - swipeThreshold) {
-        const nextIndex = (currentIndex + 1) % sections.length;
-        const nextButton = document.querySelector(`[data-section="${sections[nextIndex]}"]`);
-        if (nextButton) nextButton.click();
-    }
-
-    if (touchEndX > touchStartX + swipeThreshold) {
-        const prevIndex = (currentIndex - 1 + sections.length) % sections.length;
-        const prevButton = document.querySelector(`[data-section="${sections[prevIndex]}"]`);
-        if (prevButton) prevButton.click();
-    }
-}
-
-let konamiCode = [];
-const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-
-document.addEventListener('keydown', (e) => {
-    konamiCode.push(e.key);
-    konamiCode.splice(-konamiSequence.length - 1, konamiCode.length - konamiSequence.length);
-
-    if (konamiCode.join('').includes(konamiSequence.join(''))) {
-        document.body.style.animation = 'rainbow 2s linear infinite';
-        setTimeout(() => {
-            document.body.style.animation = '';
-        }, 5000);
-    }
-});
-
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes rainbow {
-        0% { filter: hue-rotate(0deg); }
-        100% { filter: hue-rotate(360deg); }
-    }
-`;
-document.head.appendChild(style);
