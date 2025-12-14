@@ -52,104 +52,132 @@
     </div>
 
     <script id="homeTemplate" type="text/template">
-        <div class="split-layout">
-            <div class="content-left">
-                <p class="greeting">Hi, I'm Greshl Angelene</p>
-                <h1>Greshl Angelene D. Permosil</h1>
-                <p class="intro">A Computer Engineering student growing, learning, and dreaming of building a brighter future.</p>
-                <div class="welcome-card">
-                    <p>Welcome to my personal portfolio. This site shares my journey, my background, and the moments that define who I am. From my roots in Sultan Kudarat to my aspirations in technology, I invite you to get to know me better.</p>
-                </div>
+        <div class="home-modern-layout">
+            <div class="home-visual">
+                <img src="profile.png" alt="Greshl Angelene">
+                <div class="visual-accent"></div>
             </div>
-            <div class="content-right">
-                <div class="image-frame">
-                    <img src="profile.png" alt="Greshl Angelene Permosil">
+            <div class="home-text-content">
+                <h2 class="pre-title">Hello, It's</h2>
+                <h1 class="main-title">GRESHL<br>ANGELENE</h1>
+                <h3 class="sub-title">Computer Engineering Student</h3>
+                <p class="description">Creating, Building, & Dreaming in Code.</p>
+                <div class="status-badge">
+                    <span class="pulse"></span> Open to Opportunities
                 </div>
             </div>
         </div>
     </script>
 
     <script id="profileTemplate" type="text/template">
-        <div class="tiled-grid">
-            <div class="info-card">
-                <div class="card-left">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
-                    <h3>The Basics</h3>
-                </div>
-                <div class="card-right">
-                    <p><strong>Name:</strong> Greshl Angelene D. Permosil</p>
-                    <p><strong>Age:</strong> 20 years old</p>
-                    <p><strong>Birthdate:</strong> August 02, 2005</p>
-                </div>
+        <div class="profile-specs-layout">
+            <div class="specs-header">
+                <h1>IDENTITY_LOG</h1>
+                <div class="specs-line"></div>
             </div>
-            <div class="info-card">
-                <div class="card-left">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10v6M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                    <h3>Current Status</h3>
+            
+            <div class="specs-body">
+                <div class="spec-column">
+                    <div class="spec-group">
+                        <span class="spec-label">FULL NAME</span>
+                        <span class="spec-value">Greshl Angelene D. Permosil</span>
+                    </div>
+                    <div class="spec-group">
+                        <span class="spec-label">AGE / DOB</span>
+                        <span class="spec-value">20 Yrs / Aug 02, 2005</span>
+                    </div>
+                    <div class="spec-group">
+                        <span class="spec-label">LOCATION</span>
+                        <span class="spec-value">Isulan, Sultan Kudarat</span>
+                    </div>
                 </div>
-                <div class="card-right">
-                    <p><strong>Course:</strong> Bachelor of Science in Computer Engineering</p>
-                    <p><strong>Institution:</strong> Sultan Kudarat State University</p>
+
+                <div class="spec-column">
+                    <div class="spec-group">
+                        <span class="spec-label">ACADEMIC</span>
+                        <span class="spec-value highlight">BS Computer Engineering</span>
+                        <span class="spec-sub">Sultan Kudarat State University</span>
+                    </div>
+                    <div class="spec-group">
+                        <span class="spec-label">INTERESTS</span>
+                        <span class="spec-value">Badminton, Shopping</span>
+                    </div>
                 </div>
-            </div>
-            <div class="info-card">
-                <div class="card-left">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <h3>Personal Interest</h3>
-                </div>
-                <div class="card-right">
-                    <p><strong>Likes:</strong> Playing badminton and shopping.</p>
-                    <p><strong>Dislikes:</strong> Socializing is not always my hobby; I value my quiet time.</p>
-                    <p><strong>Greatest Achievement:</strong> Vacationing in my dad's hometown.</p>
+
+                <div class="spec-column">
+                    <div class="spec-group">
+                        <span class="spec-label">ACHIEVEMENT</span>
+                        <span class="spec-value">Hometown Vacation (Dad's)</span>
+                    </div>
+                    <div class="spec-group">
+                        <span class="spec-label">TRAIT</span>
+                        <span class="spec-value">Quiet Observer</span>
+                    </div>
                 </div>
             </div>
         </div>
     </script>
 
     <script id="aboutTemplate" type="text/template">
-        <div class="about-wrapper" style="overflow-y: auto; max-height: 80vh; padding-right: 1rem;">
-            <div class="info-card" style="width: 100%;">
-                <div class="card-left" style="margin-bottom: 2rem;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                    <h3>My Autobiography</h3>
-                </div>
-                <div class="card-right" style="line-height: 1.8; font-size: 1.1rem; color: var(--color-text-dark);">
-                    <p style="margin-bottom: 1.5rem;">My name is <strong>Greshl Angelene D. Permosil</strong>, and I was born on August 02, 2005, in Isulan, Sultan Kudarat. My father is Gregorio M. Permosil, and my mother is Sharlene Mae Permosil. I have two siblings, Georgiash Glory and Elora Therese. Growing up in a small, close-knit family taught me to value what I have and to be thankful for even the small blessings. We believed in working hard, having faith, and being kind. As a child, I enjoyed simple things—playing outside with friends and helping my parents at home.</p>
-                    
-                    <p style="margin-bottom: 1.5rem;">I began my education at Kalawag Central School for elementary and continued my high school studies at Notre Dame of Isulan, Inc. (Ultimart Day-Class), passing with flying colors. I went on to pursue my senior high school years at the same institution. During my school years, I discovered both challenges and opportunities. I was not always at the top of the class, but I learned to persevere and give my best in everything I did. I pushed myself to improve in areas I found difficult. Along the way, I built friendships that gave me support and laughter, and I faced struggles that made me stronger and more determined to reach my goals.</p>
-                    
-                    <p>Today, I see myself as someone who keeps growing and learning every day. My journey is not yet finished. As I currently study at Sultan Kudarat State University, pursuing a BS in Computer Engineering, I know the road will not always be easy. But every experience has helped me understand who I am and who I want to be. I dream of having a successful career, helping my family, and inspiring others with my story. My life is still moving forward, carrying lessons of the past, hope for today, and determination for a brighter future.</p>
-                </div>
-            </div>
+        <div class="editorial-layout">
+            <article class="bio-article">
+                <h1 class="bio-title">MY STORY</h1>
+                
+                <p>
+                    <img src="activity1.png" class="float-img left" alt="Childhood">
+                    My name is <strong>Greshl Angelene D. Permosil</strong>, and I was born on August 02, 2005, in Isulan, Sultan Kudarat. My father is Gregorio M. Permosil, and my mother is Sharlene Mae Permosil. I have two siblings, Georgiash Glory and Elora Therese. Growing up in a small, close-knit family taught me to value what I have and to be thankful for even the small blessings. We believed in working hard, having faith, and being kind. As a child, I enjoyed simple things—playing outside with friends and helping my parents at home.
+                </p>
+                
+                <p>
+                    I began my education at Kalawag Central School for elementary and continued my high school studies at Notre Dame of Isulan, Inc. (Ultimart Day-Class), passing with flying colors. I went on to pursue my senior high school years at the same institution.
+                </p>
+
+                <p>
+                    <img src="activity4.png" class="float-img right" alt="School Life">
+                    During my school years, I discovered both challenges and opportunities. I was not always at the top of the class, but I learned to persevere and give my best in everything I did. I pushed myself to improve in areas I found difficult. Along the way, I built friendships that gave me support and laughter, and I faced struggles that made me stronger and more determined to reach my goals.
+                </p>
+                
+                <p>
+                    Today, I see myself as someone who keeps growing and learning every day. My journey is not yet finished. As I currently study at Sultan Kudarat State University, pursuing a BS in Computer Engineering, I know the road will not always be easy. 
+                </p>
+
+                <p>
+                    <img src="activity2.png" class="float-img left" alt="Future">
+                    But every experience has helped me understand who I am and who I want to be. I dream of having a successful career, helping my family, and inspiring others with my story. My life is still moving forward, carrying lessons of the past, hope for today, and determination for a brighter future.
+                </p>
+            </article>
         </div>
     </script>
 
     <script id="galleryTemplate" type="text/template">
-        <div class="activities-slideshow">
-            <div class="slide active" style="background-image: url('activity1.png');">
-                <div class="slide-overlay"></div>
-                <h1>MY JOURNEY</h1>
+        <div class="gallery-masonry">
+            <div class="gallery-header">
+                <h1>SNAPSHOTS</h1>
+                <p>A collection of moments & projects</p>
             </div>
-            <div class="slide" style="background-image: url('activity2.png');">
-                <div class="slide-overlay"></div>
-                <h1>MEMORIES</h1>
+            <div class="masonry-grid">
+                <div class="masonry-item">
+                    <img src="activity1.png" alt="Intramurals">
+                    <div class="item-overlay"><span>Intramurals</span></div>
+                </div>
+                <div class="masonry-item">
+                    <img src="activity2.png" alt="Kambuniyan">
+                    <div class="item-overlay"><span>Kambuniyan</span></div>
+                </div>
+                <div class="masonry-item">
+                    <img src="activity3.png" alt="Calendar App">
+                    <div class="item-overlay"><span>Calendar App</span></div>
+                </div>
+                <div class="masonry-item">
+                    <img src="activity4.png" alt="Pricing Card">
+                    <div class="item-overlay"><span>Pricing Card</span></div>
+                </div>
+                <!-- Reusing images for filling the grid as requested 'all pics' -->
+                 <div class="masonry-item">
+                    <img src="profile.png" alt="Profile Shot">
+                    <div class="item-overlay"><span>Portrait</span></div>
+                </div>
             </div>
-            <div class="slide" style="background-image: url('activity3.png');">
-                <div class="slide-overlay"></div>
-                <h1>ACHIEVEMENTS</h1>
-            </div>
-            <div class="slide" style="background-image: url('activity4.png');">
-                <div class="slide-overlay"></div>
-                <h1>FAMILY</h1>
-            </div>
-            <div class="slide-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
-                <span class="indicator" data-slide="3"></span>
-            </div>
-            <button class="slide-nav prev">‹</button>
-            <button class="slide-nav next">›</button>
         </div>
     </script>
 

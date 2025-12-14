@@ -77,9 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         content.innerHTML = template.innerHTML;
         content.className = 'section-content';
 
-        if (sectionName === 'gallery') {
-            initSlideshow();
-        }
+
     }
 
     function initSlideshow() {
