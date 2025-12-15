@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    --color-purple: #9B72AA;
-    --color-pink: #F3D1F4;
-    --color-blue: #CBF1F5;
-    --color-cream: #FFFDF5;
-    --color-text-dark: #4A3B52;
+    --color-primary-pink: #FFB7C5;
+    --color-soft-pink: #FFD1DC;
+    --color-powder-blue: #B0E0E6;
+    --color-cream-base: #FFF0F5;
+    --color-text-dark: #5D4C52;
 
-    --bg-primary: var(--color-cream);
-    --bg-secondary: var(--color-blue);
+    --bg-primary: var(--color-cream-base);
+    --bg-secondary: var(--color-soft-pink);
     --text-primary: var(--color-text-dark);
-    --accent: var(--color-purple);
-    --accent-secondary: var(--color-pink);
+
+    --accent: var(--color-primary-pink);
+
+    --accent-secondary: var(--color-powder-blue);
 
     --color-blue-deep: var(--color-text-dark);
-
-    --color-blue-bright: var(--color-purple);
-    --color-blue-pale: var(--color-blue);
-    --color-orange-vibrant: var(--color-pink);
-    --color-orange-pale: var(--color-cream);
+    --color-blue-bright: var(--color-powder-blue);
+    --color-blue-pale: var(--color-soft-pink);
+    --color-orange-vibrant: var(--color-primary-pink);
+    --color-orange-pale: var(--color-cream-base);
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
@@ -81,7 +82,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-blue-deep);
+    background: var(--color-primary-pink);
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -99,7 +100,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle, transparent 20%, rgba(255, 255, 255, 0.8) 100%);
+    background: radial-gradient(circle, transparent 40%, rgba(255, 255, 255, 0.4) 100%);
     z-index: -1;
     pointer-events: none;
 }
@@ -126,13 +127,13 @@ body {
     font-size: 8rem;
     text-align: center;
     text-transform: uppercase;
-    color: var(--color-purple);
+    color: #FFFFFF;
     background: none;
     -webkit-background-clip: unset;
     background-clip: unset;
     animation: elegantEntrance 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     padding: 1rem;
-    text-shadow: 0 10px 30px rgba(155, 114, 170, 0.3);
+    text-shadow: none;
 }
 
 
