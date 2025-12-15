@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill-opacity="0.1">
+  <defs>
+    <style>
+      .bean { fill: #3E2723; stroke: #5D4037; stroke-width: 2; opacity: 0.3; } 
+      /* Dark bean but with stroke for visibility on dark bg, or maybe just lighter fill */
+      /* Actually, on dark bg, we want beans to be slightly lighter or darker? */
+      /* Let's make them 'Roasted Gold' outline with dark fill */
+      .bean { fill: #1a120b; stroke: #3c2f2f; stroke-width: 2; }
+      /* Wait, if bg is #1E1611, beans should be slightly visible */
+    </style>
+  </defs>
+  <!-- Coffee Bean Shape: Ellipse with a curved line through it -->
+  <g transform="translate(20, 20) rotate(30)">
+    <ellipse cx="0" cy="0" rx="15" ry="10" class="bean" style="fill: #2A1E16; stroke: #3E2B22"/>
+    <path d="M-10,0 Q0,-5 10,0" stroke="#3E2B22" stroke-width="1.5" fill="none"/>
+  </g>
+  <g transform="translate(70, 70) rotate(-15)">
+    <ellipse cx="0" cy="0" rx="15" ry="10" class="bean" style="fill: #251A14; stroke: #3E2B22"/>
+    <path d="M-10,0 Q0,-5 10,0" stroke="#3E2B22" stroke-width="1.5" fill="none"/>
+  </g>
+  <g transform="translate(80, 20) rotate(80)">
+    <ellipse cx="0" cy="0" rx="12" ry="8" class="bean" style="fill: #2F221B; stroke: #3E2B22"/>
+    <path d="M-8,0 Q0,-4 8,0" stroke="#3E2B22" stroke-width="1" fill="none"/>
+  </g>
+  <g transform="translate(30, 80) rotate(120)">
+    <ellipse cx="0" cy="0" rx="14" ry="9" class="bean" style="fill: #281E19; stroke: #3E2B22"/>
+    <path d="M-9,0 Q0,-4 9,0" stroke="#3E2B22" stroke-width="1.5" fill="none"/>
+  </g>
+</svg>
