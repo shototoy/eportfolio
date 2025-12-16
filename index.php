@@ -13,6 +13,10 @@
         <h1 class="welcome-text">WELCOME</h1>
     </div>
 
+    <audio id="bgMusic" loop preload="auto">
+        <source src="bg.mp3" type="audio/mpeg">
+    </audio>
+
     <nav class="nav-spine">
         <button class="spine-item" data-section="home" aria-label="Home">
             <div class="spine-shape"></div>
@@ -33,6 +37,13 @@
             <span class="spine-label">About</span>
             <div class="spine-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+        </button>
+        <button class="spine-item" data-section="reflection" aria-label="Reflection">
+            <div class="spine-shape"></div>
+            <span class="spine-label">Reflection</span>
+            <div class="spine-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
             </div>
         </button>
         <button class="spine-item" data-section="gallery" aria-label="Gallery">
@@ -144,6 +155,29 @@
                     <img src="pic7.png" class="float-img left" alt="Future">
                     But every experience has helped me understand who I am and who I want to be. I dream of having a successful career, helping my family, and inspiring others with my story. My life is still moving forward, carrying lessons of the past, hope for today, and determination for a brighter future.
                 </p>
+            </article>
+        </div>
+    </script>
+
+    <script id="reflectionTemplate" type="text/template">
+        <div class="editorial-layout">
+            <article class="bio-article">
+                <h1 class="bio-title">REFLECTION</h1>
+                
+                <h3 style="margin-top: 2rem;">What you learned from the course</h3>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-top: 1rem;">
+                    <li>Learning scripting in Elective 1 is initially tough due to new logic, confusing syntax, and frustrating debugging, but success comes from practicing persistence and breaking down complex problems.</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">Challenges faced</h3>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-top: 1rem;">
+                    <li>Managing the frustration that comes with frequent syntax errors, logical bugs, and the necessity of debugging—a process that requires patience and a systematic approach to tracing errors. Furthermore, understanding the difference between various data structures, control flow (like loops and conditionals), and translating a real-world problem into an efficient algorithmic solution can be difficult.</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">How scripting languages can help your future professional work</h3>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-top: 1rem;">
+                    <li>The real professional benefit of learning scripting is the long-term advantage of having strong problem-solving skills. Scripting teaches you to think logically and structure solutions efficiently, which is valuable everywhere. By being able to automate tasks and systems, you will stand out from others, handle bigger projects, and save time by reducing manual work. This skill makes you a proactive person who can build your own tools, making your abilities essential in the future world of work.</li>
+                </ul>
             </article>
         </div>
     </script>
